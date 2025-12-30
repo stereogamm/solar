@@ -21,12 +21,12 @@ export const Background = () => {
   gyroControls: true,
   minHeight: 100.00,
   minWidth: 100.00,
-  baseColor: 0x6e6e72,
+  baseColor: 0xfae0b6,
   backgroundColor: 0x0,
   amplitudeFactor: 0,
   xOffset: 0.2,
   yOffset: 0.2,
-  size: 5
+  size: 0.9,
         })
       )
     }
