@@ -8,12 +8,10 @@ export function TitlePage() {
   return (
     <div className={styles.main}>
       <div className={styles["title-block"]}>
-        <div className={styles.title}>
+       
         <Navbar/>
-          <h1>Solaris</h1>
-          <span className={styles.subtitle}>
-            What we want to know about Solar System
-          </span>
+        <h1>Solaris</h1>
+        <div className={styles.title}>
         </div>
       </div>
       <div className={styles["logo-block"]}>
