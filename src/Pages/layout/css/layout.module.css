@@ -1,0 +1,9 @@
+.wrapper {
+ height: 100vh;
+ overflow: hidden;
+ padding: 2rem;
+}
+
+main {
+  flex: 1;         
+}
