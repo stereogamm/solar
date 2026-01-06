@@ -1,20 +1,18 @@
 .main {
   display: flex;
-  width: 100vw;
-  height: 100vh;
 }
 
 .title-block {
-  flex: 0 0 40%;
-  padding: 5rem 3rem;
+  flex: 0 0 20%;
+  padding: 5rem 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: start;
 }
 
 h1 {
   color: #c8c4c4ff;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .title {

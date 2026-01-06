@@ -1,5 +1,5 @@
-//@ts-nocheck
-//@ts-ignore
+// @ts-nocheck
+// @ts-ignore
 import HALO from 'vanta/dist/vanta.halo.min'
 import { useRef, useEffect, useState } from 'react'
 import * as THREE from "three";
@@ -19,14 +19,14 @@ export const Background = () => {
   mouseControls: true,
   touchControls: true,
   gyroControls: true,
-  minHeight: 100.00,
-  minWidth: 100.00,
+  minHeight: 230.00,
+  minWidth: 230.00,
   baseColor: 0xfae0b6,
   backgroundColor: 0x0,
   amplitudeFactor: 0,
   xOffset: 0.2,
   yOffset: 0.2,
-  size: 0.9,
+  size: 1,
         })
       )
     }
