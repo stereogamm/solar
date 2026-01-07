@@ -1,4 +1,4 @@
-import { Navbar } from "../../../Widgets/navigation/navbar";
+import { Navbar } from "../../../Widgets/navigation/ui/navbar";
 import { Outlet } from "react-router-dom";
 import styles from "../css/layout.module.css"
 

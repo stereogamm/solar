@@ -12,8 +12,13 @@ type Body = {
 
 type Bodies = Body[]
 
+type BodyListProps = {
+  id: string,
+  name: string
+}
 
-export const BodiesList = () => {
+
+export const BodiesList = ({id, name} : BodyListProps) => {
       const [bodies, setBodies] = useState<[] | Bodies>([])
 
 useEffect(() => {
@@ -29,7 +34,7 @@ useEffect(() => {
       return (
     <div className={styles.list}> 
       {bodies.map(body => (
-        <div key={body.id}>{body.name}</div>
+        <div key={id}>{name}</div>
       ))}
     </div>
   )

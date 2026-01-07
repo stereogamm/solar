@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { NavLink } from "../../Shared/ui/navLink/index";
+import { NavLink } from "../../../Shared/ui/navLink/index";
 import { Stack } from "@mantine/core";
-import styles from "./css/navbar.module.css";
-import { navigationData } from "../../Shared/configs/navigationData/navigationData";
+import styles from "../css/navbar.module.css";
+import { navigationData } from "../../../Shared/configs/navigationData/navigationData";
 
 export const Navbar = () => {
   const [active, setActive] = useState(2);
