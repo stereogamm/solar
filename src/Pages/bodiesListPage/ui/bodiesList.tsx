@@ -1,7 +1,36 @@
+import { useEffect, useState } from 'react'
+import { getBodies } from '../../../Shared/api/api-client'
+import styles from "../css/bodiesList.module.css"
+
+
+type Body = {
+    id: string,
+    name: string,
+    isPlanet: boolean,
+    bodyType: string,
+}
+
+type Bodies = Body[]
+
+
 export const BodiesList = () => {
-    return(
-        <>
-            <span>Bodies List</span>
-        </>
-    )
+      const [bodies, setBodies] = useState<[] | Bodies>([])
+
+useEffect(() => {
+    const fetchBodies = async () => {
+    const data = await getBodies() 
+      setBodies(data.bodies)        
+    }
+
+    fetchBodies()
+},[])
+
+
+      return (
+    <div className={styles.list}> 
+      {bodies.map(body => (
+        <div key={body.id}>{body.name}</div>
+      ))}
+    </div>
+  )
 }
