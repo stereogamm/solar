@@ -1,0 +1,21 @@
+.card {
+  min-height: 300px;
+  min-width: 200px;
+}
+
+.section {
+    padding: .5rem;
+    border-radius: 10px;
+}
+
+.like {
+  color: red;
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: .5rem;
+  font-weight: 700;
+}
