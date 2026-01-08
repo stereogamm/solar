@@ -1,4 +1,6 @@
 import { IconHeart } from "@tabler/icons-react";
+import Img from '../../../Assets/images/milky-way.jpg';
+
 import {
   ActionIcon,
   Badge,
@@ -16,22 +18,24 @@ type PlanetCardProps = {
 };
 
 export const PlanetCard = ({ name }: PlanetCardProps) => {
+
+  console.log(name)
   return (
     <>
-      <Card withBorder radius="md" p="md" className={styles.card}>
-        <Card.Section>
-          <Image alt={name} height={180} />
+      <Card  radius="xs" bg="black.9" className={styles.card}>
+        <Card.Section className={styles.section}  >
+          <Image src={Img} alt={name} height={180} />
         </Card.Section>
-        <Card.Section className={styles.section} mt="md">
+        <Card.Section  mt="md">
           <Group justify="apart">
-            <Text fz="lg" fw={500}>
+            <Text fz="lg" fw={500} c="orange">
               {name}
             </Text>
-            <Badge size="sm" variant="light">
+            <Badge size="sm" variant="light" c="orange">
               {name}
             </Badge>
           </Group>
-          <Text fz="sm" mt="xs">
+          <Text c="red" fz="sm" mt="xs">
             {name}
           </Text>
         </Card.Section>
@@ -45,9 +49,9 @@ export const PlanetCard = ({ name }: PlanetCardProps) => {
         </Card.Section>
               <Group mt="xs">
         <Button radius="md" style={{ flex: 1 }}>
-          Show details
+          details
         </Button>
-        <ActionIcon variant="default" radius="md" size={36}>
+        <ActionIcon variant="default" radius="md" size={30}>
           <IconHeart className={styles.like} stroke={1.5} />
         </ActionIcon>
       </Group>

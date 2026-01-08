@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getBodies } from '../../../Shared/api/api-client'
+import { PlanetCard } from "../../../Widgets/card/index"
 import styles from "../css/bodiesList.module.css"
 
 
@@ -19,22 +20,25 @@ type BodyListProps = {
 
 
 export const BodiesList = ({id, name} : BodyListProps) => {
-      const [bodies, setBodies] = useState<[] | Bodies>([])
+      const [bodies, setBodies] = useState<null | Bodies>(null)
+
 
 useEffect(() => {
     const fetchBodies = async () => {
     const data = await getBodies() 
-      setBodies(data.bodies)        
+      setBodies(data.bodies)  
+           
     }
-
-    fetchBodies()
-},[])
+fetchBodies()
+ },[])
 
 
       return (
     <div className={styles.list}> 
-      {bodies.map(body => (
-        <div key={id}>{name}</div>
+      {bodies?.map(body => (
+        <div key={id}>
+           <PlanetCard name={body.name}/>
+        </div>
       ))}
     </div>
   )

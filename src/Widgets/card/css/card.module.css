@@ -1,12 +1,11 @@
 .card {
-  background-color: rgb(91, 90, 90);
+  min-height: 300px;
+  min-width: 200px;
 }
 
 .section {
-  border-bottom: 1px solid green;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  padding-bottom: .5rem;
+    padding: .5rem;
+    border-radius: 10px;
 }
 
 .like {

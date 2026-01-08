@@ -1,0 +1,23 @@
+
+:root[data-mantine-color-scheme='dark'] {
+  --mantine-color-body: #000000;   
+  --mantine-color-text: #dbdbdb;  
+  --mantine-font-family: 'Zalando Sans', system-ui, sans-serif;
+  --paper-border-color: red;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--mantine-color-body);
+  color: var(--mantine-color-text);
+  font-family: var(--mantine-font-family);
+}
+
+@font-face {
+  font-family: 'Zalando Sans';
+  src: url('/src/Assets/fonts/ZalandoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+

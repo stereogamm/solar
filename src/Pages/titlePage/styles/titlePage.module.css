@@ -1,5 +1,7 @@
 .main {
   display: flex;
+    flex: 1;       
+  min-height: 0;
 }
 
 .title-block {
@@ -11,6 +13,7 @@
 }
 
 h1 {
+   margin: 0;
   color: #c8c4c4ff;
   font-size: 3.5rem;
 }
@@ -26,5 +29,4 @@ h1 {
 
 .logo-block {
   flex: 1;
-  height: 100vh;
 }
