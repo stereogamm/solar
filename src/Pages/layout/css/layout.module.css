@@ -4,8 +4,12 @@
 }
 
 
-main {
-  flex: 1;    
-  display: flex;  
+.main-content {
+  height: 100%;
+  display: flex; 
+  flex: 1;     
   min-height: 0;  
+  justify-content: center;
+  align-items: center;
+  
 }

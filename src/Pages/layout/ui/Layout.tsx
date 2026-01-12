@@ -6,9 +6,11 @@ export const Layout = () => {
   return (
     <div className={styles.wrapper}>
       <Navbar />
-      <main>
+      <main className={styles['main-content']}>
         <Outlet />
       </main>
     </div>
   );
 };
+
+
