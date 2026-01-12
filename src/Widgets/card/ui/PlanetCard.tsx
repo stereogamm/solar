@@ -49,8 +49,11 @@ export const PlanetCard = ({ name, englishName, discoveredBy }: PlanetCardProps)
             </Group>
         </Card.Section>
               <Group mt="xs">
-        <Button radius="md" style={{ flex: 1 }}>
-          details
+        <Button radius="md" style={{ flex: 1 }} variant="filled" size="sm"
+       color='black.28'>
+                   <Text fw={500} c="black.22">
+             to explore
+            </Text>
         </Button>
         <ActionIcon variant="default" radius="md" size={30}>
           <IconHeart className={styles.like} stroke={1.5} />

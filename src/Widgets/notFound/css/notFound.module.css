@@ -1,0 +1,35 @@
+.root {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.inner {
+  position: relative;
+}
+
+.image {
+  /* position: absolute;
+  inset: 0; */
+  opacity: 0.65;
+  color: rgb(255, 166, 82);
+}
+
+.content {
+padding-top: 2rem;
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+
+.title {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.description {
+  max-width: 540px;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

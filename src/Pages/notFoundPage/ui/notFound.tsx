@@ -1,7 +1,9 @@
+import { NothingFoundBackground } from "../../../Widgets/notFound/index"
+
 export const NotFound = () => {
     return(
         <>
-            <span>Not Found</span>
+         <NothingFoundBackground />
         </>
     )
 }
