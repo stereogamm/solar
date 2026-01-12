@@ -15,11 +15,12 @@ import styles from "../css/card.module.css";
 
 type PlanetCardProps = {
   name: string;
+  englishName: string,
+  discoveredBy: string,
 };
 
-export const PlanetCard = ({ name }: PlanetCardProps) => {
+export const PlanetCard = ({ name, englishName, discoveredBy }: PlanetCardProps) => {
 
-  console.log(name)
   return (
     <>
       <Card  radius="xs" bg="black.9" className={styles.card}>
@@ -28,23 +29,23 @@ export const PlanetCard = ({ name }: PlanetCardProps) => {
         </Card.Section>
         <Card.Section  mt="md">
           <Group justify="apart">
-            <Text fz="lg" fw={500} c="orange">
-              {name}
+            <Text fz="h2" fw={500} c="black.25">
+              {englishName}
             </Text>
-            <Badge size="sm" variant="light" c="orange">
+            <Badge size="lg"  variant="gradient"
+      gradient={{ from: 'black.26', to: 'black.9', deg: 45 }}
+       radius="sm" c="black.22" >
               {name}
             </Badge>
           </Group>
-          <Text c="red" fz="sm" mt="xs">
-            {name}
+          <Text c="black.22" fz="sm" mt="xs">
+            Discovered by {discoveredBy}
           </Text>
         </Card.Section>
         <Card.Section className={styles.section}>
           <Text mt="md" className={styles.label} c="dimmed">
-            Perfect for you, if you enjoy
           </Text>
-            <Group gap={7} mt={5}>
-                {name}
+            <Group gap={7} mt={5} c="black.22">
             </Group>
         </Card.Section>
               <Group mt="xs">
@@ -59,3 +60,6 @@ export const PlanetCard = ({ name }: PlanetCardProps) => {
     </>
   );
 };
+
+
+
