@@ -72,7 +72,7 @@ export const PlanetCard = ({
           >
            
             <Text fw={500} c="black.22">
-              to explore
+              explore
             </Text>
           </Button>
 
