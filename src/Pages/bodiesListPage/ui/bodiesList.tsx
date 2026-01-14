@@ -14,14 +14,20 @@ type Body = {
   discoveredBy: string;
   semimajorAxis: number;
   aphelion: number;
+  meanRadius: number;
+  mass: Mass;
+  eccentricity: number;
+  sideralOrbit: number;
+  gravity: number;
 };
+
+type Mass = {
+  massValue: number;
+  massExponent: number
+}
 
 type Bodies = Body[];
 
-// type BodyListProps = {
-//   id: string,
-//   name: string
-// }
 
 export const BodiesList = () => {
   const [bodies, setBodies] = useState<null | Bodies>(null);
@@ -74,11 +80,35 @@ export const BodiesList = () => {
       <ModalWindow isOpened={isModalVisible} onClose={onCloseModalWindow}>
         <div>
           {selectedBody && (
-            <>
-              <p> {selectedBody.name}</p>
-              <p>{`Semimajor Axis ${selectedBody.semimajorAxis}`}</p>
-              <p>{`Aphelion ${selectedBody.aphelion}`}</p>
-            </>
+            <div className={styles.wrapper}>
+              <h2> {selectedBody.name}</h2>
+                <ul >
+                  <li className={styles["list-wrapper"]}>
+                    <h3>Mean radius (km)</h3>
+                    <span>{selectedBody.meanRadius}</span>
+                  </li>
+                  <li className={styles["list-wrapper"]}>
+                    <h3>Mass (kg)</h3>
+                    <span>{selectedBody.mass.massValue}</span> 
+                  </li>
+                   <li className={styles["list-wrapper"]}>
+                    <h3>Semimajor axis</h3>
+                    <span>{selectedBody.semimajorAxis}</span>
+                  </li>
+                  <li className={styles["list-wrapper"]}>
+                    <h3>Orbital eccentricity</h3>
+                    <span>{selectedBody.eccentricity}</span>
+                   </li>
+                  <li className={styles["list-wrapper"]}>
+                    <h3>Orbital period (days)</h3>
+                    <span>{selectedBody.sideralOrbit}</span>
+                  </li>
+                  <li className={styles["list-wrapper"]}>
+                    <h3>Surface gravity (m/s²)</h3>
+                    <span>{selectedBody.gravity}</span> 
+                  </li>
+                </ul>
+            </div>
           )}
         </div>
       </ModalWindow>
