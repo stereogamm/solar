@@ -27,8 +27,8 @@ export const BodiesList = () => {
   const [bodies, setBodies] = useState<null | Bodies>(null);
   const [loading, setLoading] = useState(true);
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [selectedBody, setSelectedBody] = useState<Body | null>(null);
+  const [isModalVisible, setIsModalVisible] = useState(false); 
+  const [selectedBody, setSelectedBody] = useState<Body | null>(null); 
 
   const onOpenModalWindow = (body: Body) => {
     setSelectedBody(body);
@@ -85,3 +85,4 @@ export const BodiesList = () => {
     </div>
   );
 };
+
