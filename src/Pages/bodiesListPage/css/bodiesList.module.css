@@ -14,3 +14,27 @@
     justify-content: center;
     align-items: center;
 }
+
+.wrapper {
+     display: flex;
+     flex-direction: column;
+     padding: 1rem;
+}
+
+h2 {
+    align-self: center;
+}
+
+ul {
+     display: flex; 
+     flex-direction: column;
+     gap: .5rem;
+}
+
+.list-wrapper {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+   
+}
