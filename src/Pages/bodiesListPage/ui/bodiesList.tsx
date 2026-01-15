@@ -4,6 +4,7 @@ import { PlanetCard } from "../../../Widgets/card/index";
 import styles from "../css/bodiesList.module.css";
 import { LoaderCustom } from "../../../Shared/ui/loader";
 import { ModalWindow } from "../../../Widgets/modalWindow/index";
+import { PLANETS_LIST_HEADERS } from "../../../Shared/configs/dataMapping/bodiesListInfo"
 
 type Body = {
   id: string;
@@ -84,36 +85,36 @@ export const BodiesList = () => {
               <h2> {selectedBody.englishName}</h2>
                 <ul >
                   <li className={styles["list-wrapper"]}>
-                    <h3>Planet</h3>
+                    <h3>{PLANETS_LIST_HEADERS.isPlanet}</h3>
                     <span>{selectedBody.isPlanet === true ? "Yes" : "No" }</span>
                   </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Body type</h3>
+                    <h3>{PLANETS_LIST_HEADERS.bodyType}</h3>
                     <span>{selectedBody.bodyType}</span>
                   </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Mean radius</h3>
+                    <h3>{PLANETS_LIST_HEADERS.meanRadius}</h3>
                     <span>{selectedBody.meanRadius}</span>
                   </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Mass</h3>
+                    <h3>{PLANETS_LIST_HEADERS.mass}</h3>
                     <span>  {selectedBody.mass.massValue} × 10
                         <sup>{selectedBody.mass.massExponent}</sup> kg</span> 
                   </li>
                    <li className={styles["list-wrapper"]}>
-                    <h3>Semimajor axis</h3>
+                    <h3>{PLANETS_LIST_HEADERS.semimajorAxis}</h3>
                     <span>{selectedBody.semimajorAxis}</span>
                   </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Orbital eccentricity</h3>
+                    <h3>{PLANETS_LIST_HEADERS.eccentricity}</h3>
                     <span>{selectedBody.eccentricity}</span>
                    </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Orbital period</h3>
+                    <h3>{PLANETS_LIST_HEADERS.sideralOrbit}</h3>
                     <span>{selectedBody.sideralOrbit}</span>
                   </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Surface gravity</h3>
+                    <h3>{PLANETS_LIST_HEADERS.gravity}</h3>
                     <span>{selectedBody.gravity}</span> 
                   </li>
                 </ul>
