@@ -54,7 +54,7 @@ export const PlanetCard = ({
             </Badge>
           </Group>
           <Text c="black.22" fz="sm" mt="xs">
-            Discovered by {discoveredBy}
+            Discovered by {discoveredBy === "" ? "who know's" : `${discoveredBy}`}
           </Text>
         </Card.Section>
         <Card.Section className={styles.section}>

@@ -81,15 +81,24 @@ export const BodiesList = () => {
         <div>
           {selectedBody && (
             <div className={styles.wrapper}>
-              <h2> {selectedBody.name}</h2>
+              <h2> {selectedBody.englishName}</h2>
                 <ul >
                   <li className={styles["list-wrapper"]}>
-                    <h3>Mean radius (km)</h3>
+                    <h3>Planet</h3>
+                    <span>{selectedBody.isPlanet === true ? "Yes" : "No" }</span>
+                  </li>
+                  <li className={styles["list-wrapper"]}>
+                    <h3>Body type</h3>
+                    <span>{selectedBody.bodyType}</span>
+                  </li>
+                  <li className={styles["list-wrapper"]}>
+                    <h3>Mean radius</h3>
                     <span>{selectedBody.meanRadius}</span>
                   </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Mass (kg)</h3>
-                    <span>{selectedBody.mass.massValue}</span> 
+                    <h3>Mass</h3>
+                    <span>  {selectedBody.mass.massValue} × 10
+                        <sup>{selectedBody.mass.massExponent}</sup> kg</span> 
                   </li>
                    <li className={styles["list-wrapper"]}>
                     <h3>Semimajor axis</h3>
@@ -100,11 +109,11 @@ export const BodiesList = () => {
                     <span>{selectedBody.eccentricity}</span>
                    </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Orbital period (days)</h3>
+                    <h3>Orbital period</h3>
                     <span>{selectedBody.sideralOrbit}</span>
                   </li>
                   <li className={styles["list-wrapper"]}>
-                    <h3>Surface gravity (m/s²)</h3>
+                    <h3>Surface gravity</h3>
                     <span>{selectedBody.gravity}</span> 
                   </li>
                 </ul>
