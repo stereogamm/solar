@@ -39,7 +39,7 @@ const navigation = useNavigate()
           </>
       ) : (
             <Icon size={30} stroke={1} color="#c8c4c4ff" />
-      )
+        )
       }
     
       </UnstyledButton>

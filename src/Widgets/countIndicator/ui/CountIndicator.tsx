@@ -1,21 +1,22 @@
 import { Indicator } from "@mantine/core"
+import { useBodiesCounterStore } from "../../../store/store"
 
 
 export const CountIndicator = () => {
-
-    const label = 1
+    const count = useBodiesCounterStore((state) => (state.bodies))
+    
     return(
         <>
             <Indicator 
             inline
             processing 
-            color="black.12" 
+            color="black.15" 
             size={25}
             offset={2} 
             position="top-end"  
             withBorder
             radius="lg"
-            label={label}
+            label={count}
             autoContrast
             >
             </Indicator>
