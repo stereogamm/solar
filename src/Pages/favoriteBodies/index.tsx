@@ -1,0 +1,1 @@
+export { FavoriteBodies } from "./ui/favoriteBodies"

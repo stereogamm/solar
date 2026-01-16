@@ -1,4 +1,4 @@
-import { Modal, Transition } from "@mantine/core";
+import { Modal } from "@mantine/core";
 import type { ReactNode } from "react";
 
 type ModalProps = {

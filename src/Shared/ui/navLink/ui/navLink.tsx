@@ -1,7 +1,8 @@
 import { UnstyledButton } from "@mantine/core";
-import { IconUniverse } from "@tabler/icons-react";
+import { IconUniverse , IconStars} from "@tabler/icons-react";
 import styles from "../styles/navLink.module.css";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { CountIndicator } from "../../../../Widgets/countIndicator/index"
 
 
 type NavLinkProps = {
@@ -30,8 +31,17 @@ const navigation = useNavigate()
           }
 
         }}
-      >
-        <Icon size={30} stroke={1} color="#c8c4c4ff" />
+      > {
+        Icon === IconStars? (
+          <>
+          <Icon size={30} stroke={1} color="#c8c4c4ff" />
+            <CountIndicator/>
+          </>
+      ) : (
+            <Icon size={30} stroke={1} color="#c8c4c4ff" />
+        )
+      }
+    
       </UnstyledButton>
   );
 };
