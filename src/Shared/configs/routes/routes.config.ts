@@ -3,4 +3,5 @@ export const routes = {
     photos: () => '/photos',
     positions: () => '/positions',
     list: () => '/list',
+    favorite: () => '/favorite',
 }

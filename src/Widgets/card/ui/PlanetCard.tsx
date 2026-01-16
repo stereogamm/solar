@@ -1,5 +1,5 @@
 
-import { IconHeart } from "@tabler/icons-react";
+import { IconStar } from "@tabler/icons-react";
 import Img from "../../../Assets/images/milky-way.jpg";
 
 
@@ -77,7 +77,7 @@ export const PlanetCard = ({
           </Button>
 
           <ActionIcon variant="default" radius="md" size={30}>
-            <IconHeart className={styles.like} stroke={1.5} />
+            <IconStar className={styles.like} stroke={1.5} />
           </ActionIcon>
         </Group>
       </Card>

@@ -6,6 +6,7 @@ import { Positions } from "../../Pages/positionsPage";
 import { BodiesList } from "../../Pages/bodiesListPage";
 import { NotFound } from "../../Pages/notFoundPage"
 import { Layout } from "../../Pages/layout/ui/Layout";
+import { FavoriteBodies } from "../../Pages/favoriteBodies/index";
 
 export const router = createBrowserRouter([{
    element: <Layout />,
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([{
     {
         path: routes.list(),
         element: <BodiesList />
+    },
+    {
+        path: routes.favorite(),
+        element: <FavoriteBodies />
     },
     {
         path: '*',
