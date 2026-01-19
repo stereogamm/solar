@@ -34,8 +34,6 @@ export const PlanetCard = ({
 }: PlanetCardProps) => {
 
 
-  const addBodyToFavorite = useLikeBody()
-
   return (
     <>
       <Card radius="xs" bg="black.9" className={styles.card}>
@@ -80,7 +78,7 @@ export const PlanetCard = ({
             </Text>
           </Button>
 
-          <ActionIcon onClick={addBodyToFavorite} variant="default" radius="md" size={30}>
+          <ActionIcon onClick={useLikeBody()} variant="default" radius="md" size={30}>
             <IconStar className={styles.like} stroke={1.5} />
           </ActionIcon>
         </Group>
