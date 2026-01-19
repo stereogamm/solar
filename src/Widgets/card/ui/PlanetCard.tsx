@@ -21,6 +21,7 @@ type PlanetCardProps = {
   discoveredBy: string;
   onClick: () => void;
   id: string;
+  addFavorite: () => void;
 };
 
 
@@ -29,7 +30,8 @@ export const PlanetCard = ({
   name,
   englishName,
   discoveredBy,
-  onClick, 
+  onClick,
+  addFavorite,
 }: PlanetCardProps) => {
 
   return (
@@ -76,7 +78,7 @@ export const PlanetCard = ({
             </Text>
           </Button>
 
-          <ActionIcon variant="default" radius="md" size={30}>
+          <ActionIcon onClick={addFavorite} variant="default" radius="md" size={30}>
             <IconStar className={styles.like} stroke={1.5} />
           </ActionIcon>
         </Group>
@@ -84,3 +86,6 @@ export const PlanetCard = ({
     </>
   );
 };
+
+
+//addFavorite={addFavorite}
