@@ -1,6 +1,7 @@
 
 import { IconStar } from "@tabler/icons-react";
 import Img from "../../../Assets/images/milky-way.jpg";
+import { useLikeBody } from '../../../store/store'
 
 
 import {
@@ -21,7 +22,6 @@ type PlanetCardProps = {
   discoveredBy: string;
   onClick: () => void;
   id: string;
-  addFavorite: () => void;
 };
 
 
@@ -31,8 +31,10 @@ export const PlanetCard = ({
   englishName,
   discoveredBy,
   onClick,
-  addFavorite,
 }: PlanetCardProps) => {
+
+
+  const addBodyToFavorite = useLikeBody()
 
   return (
     <>
@@ -78,7 +80,7 @@ export const PlanetCard = ({
             </Text>
           </Button>
 
-          <ActionIcon onClick={addFavorite} variant="default" radius="md" size={30}>
+          <ActionIcon onClick={addBodyToFavorite} variant="default" radius="md" size={30}>
             <IconStar className={styles.like} stroke={1.5} />
           </ActionIcon>
         </Group>
@@ -88,4 +90,3 @@ export const PlanetCard = ({
 };
 
 
-//addFavorite={addFavorite}

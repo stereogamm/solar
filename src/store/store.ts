@@ -14,6 +14,10 @@ export const useBodiesCounterStore = create<IUseBodiesCounterStore>()((set) => (
 )
 
 
+export const useBodies = () => useBodiesCounterStore((state) => state.bodies)
+export const useLikeBody = () => useBodiesCounterStore((state) => state.likeBody)
+export const useUnlikeBody = () => useBodiesCounterStore((state) =>  state.unlikeBody)
+
 
 
 

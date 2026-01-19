@@ -5,7 +5,7 @@ import styles from "../css/bodiesList.module.css";
 import { LoaderCustom } from "../../../Shared/ui/loader";
 import { ModalWindow } from "../../../Widgets/modalWindow/index";
 import { PLANETS_LIST_HEADERS } from "../../../Shared/configs/dataMapping/bodiesListInfo"
-import { useBodiesCounterStore } from "../../../store/store"
+
 
 type Body = {
   id: string;
@@ -38,7 +38,6 @@ export const BodiesList = () => {
   const [isModalVisible, setIsModalVisible] = useState(false); 
   const [selectedBody, setSelectedBody] = useState<Body | null>(null); 
 
- 
 
   const onOpenModalWindow = (body: Body) => {
     setSelectedBody(body);
@@ -50,9 +49,7 @@ export const BodiesList = () => {
     setSelectedBody(null);
   };
 
-
-  const addBodyToFavorite = useBodiesCounterStore((state) => state.likeBody)
-
+  
 
   useEffect(() => {
     const fetchBodies = async () => {
@@ -81,7 +78,6 @@ export const BodiesList = () => {
             name={body.name}
             englishName={body.englishName}
             discoveredBy={body.discoveredBy}
-            addFavorite={addBodyToFavorite}
           />
       ))}
       <ModalWindow isOpened={isModalVisible} onClose={onCloseModalWindow}>

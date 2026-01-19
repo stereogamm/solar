@@ -1,10 +1,10 @@
 import { Indicator } from "@mantine/core"
-import { useBodiesCounterStore } from "../../../store/store"
+import { useBodies } from "../../../store/store"
 
 
 export const CountIndicator = () => {
-    const count = useBodiesCounterStore((state) => (state.bodies))
-    
+    const count = useBodies()
+
     return(
         <>
             <Indicator 
