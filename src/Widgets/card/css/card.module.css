@@ -9,10 +9,16 @@
 }
 
 .like {
-  color: rgb(255, 104, 34);
+  color: rgb(255, 130, 34);
   width: 20px;
   height: 20px;
 }
+
+.active {
+  color: rgb(245, 184, 40);
+   }
+
+
 
 .label {
   text-transform: uppercase;

@@ -39,6 +39,7 @@ export const BodiesList = () => {
   const [selectedBody, setSelectedBody] = useState<Body | null>(null); 
 
 
+
   const onOpenModalWindow = (body: Body) => {
     setSelectedBody(body);
     setIsModalVisible(true);
