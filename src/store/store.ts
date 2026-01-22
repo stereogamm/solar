@@ -1,6 +1,9 @@
 import { create, type StateCreator } from 'zustand'
+import { createJSONStorage, persist, devtools } from "zustand/middleware"
+
 interface IInintialState {
      bodies: number,
+     number: number
 }
 
 interface IActions {
@@ -11,17 +14,25 @@ interface IActions {
 interface IUseBodiesCounterStore extends IInintialState, IActions{}
 
 const initialState : IInintialState = {
-     bodies: 0
+     bodies: 0,
+     number: 10
 }
 
-const BodiesCounterStore : StateCreator<IUseBodiesCounterStore>= ((set) => ({
+const BodiesCounterStore : StateCreator<IUseBodiesCounterStore, 
+[['zustand/devtools', never],
+ ['zustand/persist', unknown]]
+> = ((set) => ({
    ...initialState,
-    likeBody: () => set((state) => ({bodies: state.bodies + 1})),
-    unlikeBody: () => set((state) => ({bodies: state.bodies - 1})),
+    likeBody: () => set((state) => ({bodies: state.bodies + 1}), false, "likeBody"),
+    unlikeBody: () => set((state) => ({bodies: state.bodies - 1}),  false, "unlikeBody"),
     })
 )
 
-const useBodiesCounterStore = create<IUseBodiesCounterStore>()(BodiesCounterStore)
+const useBodiesCounterStore = create<IUseBodiesCounterStore>()(devtools(persist(BodiesCounterStore,  {
+    name: "bodies-storage",
+    storage: createJSONStorage(() => localStorage),
+    partialize: (state) => ({bodies: state.bodies}),
+})))
 
 
 //selectors
