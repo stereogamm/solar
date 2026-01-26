@@ -1,5 +1,5 @@
 import { Indicator } from "@mantine/core"
-import { useBodies } from "../../../store/store"
+import { useBodies } from "../../../stores/useBodiesCounterStore"
 
 
 export const CountIndicator = () => {

@@ -3,7 +3,6 @@ import { createJSONStorage, persist, devtools } from "zustand/middleware"
 
 interface IInintialState {
      bodies: number,
-     number: number
 }
 
 interface IActions {
@@ -15,7 +14,6 @@ interface IUseBodiesCounterStore extends IInintialState, IActions{}
 
 const initialState : IInintialState = {
      bodies: 0,
-     number: 10
 }
 
 const BodiesCounterStore : StateCreator<IUseBodiesCounterStore, 
