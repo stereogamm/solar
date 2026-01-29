@@ -35,6 +35,24 @@ const usedColors: MantineColorsTuple = [
 
 export const theme = createTheme({
   colors: { black: usedColors },
-  primaryColor: 'black',
+  primaryColor: "black",
   primaryShade: 6,
+      components: {
+      TextInput: {
+        styles: {
+          input: {
+            border: "1px solid #fdb766",
+            backgroundColor: "#000000",
+            color: " #fdb766",
+          },
+          label: {
+            color: " #fdb766",
+          },
+          description: {
+            color: "#e17800",
+            opacity: .7,
+          }
+        },
+      },
+    },
 })

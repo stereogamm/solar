@@ -5,6 +5,8 @@ import { LoaderCustom } from "../../../Shared/ui/loader";
 import { ModalWindow } from "../../../Widgets/modalWindow/index";
 import { PLANETS_LIST_HEADERS } from "../../../Shared/configs/dataMapping/bodiesListInfo";
 import { useBodiesStore } from "../../../stores/useBodiesStore";
+import { CustomTextInput } from "../../../Shared/ui/textInput"
+
 
 export type Body = {
   id: string;
@@ -59,6 +61,18 @@ export const BodiesList = () => {
   }
 
   return (
+    <>
+    <div className={styles["input-wrapper"]}>
+    <CustomTextInput
+      variant="filled"
+      size="md"
+      label="Body search"
+      description="enter the body's name"
+      placeholder=""
+    />
+    </div>
+
+
     <div className={styles.list}>
       {bodyList?.map((body: any) => (
         <PlanetCard
@@ -118,5 +132,6 @@ export const BodiesList = () => {
         </div>
       </ModalWindow>
     </div>
+     </>
   );
 };
