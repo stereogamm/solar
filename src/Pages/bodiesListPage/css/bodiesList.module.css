@@ -1,5 +1,5 @@
 .list {
-    padding: 3rem;
+    padding: 5rem 3rem;
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -38,3 +38,18 @@ ul {
     justify-content: space-between;
    
 }
+
+.input-wrapper {
+    padding: 3rem;
+    align-self: flex-end;
+}
+
+/* .label {
+    color: red;
+}
+
+.input {
+    border: 1px solid red;
+    color: red;
+    background: red;
+} */
