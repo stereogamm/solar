@@ -6,6 +6,8 @@ import { ModalWindow } from "../../../Widgets/modalWindow/index";
 import { PLANETS_LIST_HEADERS } from "../../../Shared/configs/dataMapping/bodiesListInfo";
 import { useBodiesStore } from "../../../stores/useBodiesStore";
 import { CustomTextInput } from "../../../Shared/ui/textInput"
+import { Profiler } from "react";
+import { type ProfilerOnRenderCallback } from "react";
 
 
 export type Body = {
@@ -60,8 +62,13 @@ export const BodiesList = () => {
     );
   }
 
+  const onRender : ProfilerOnRenderCallback = (id, phase, actualDuration, baseDuration, startTime, commitTime)  => {
+    console.log(`Component ${id} has ${phase} during ${actualDuration}ms ${baseDuration} ${startTime} ${commitTime}`) //added to test profiler react feature
+  }
+
   return (
     <>
+    <Profiler id="BodiesList" onRender={onRender}> 
     <div className={styles["input-wrapper"]}>
     <CustomTextInput
       variant="filled"
@@ -132,6 +139,7 @@ export const BodiesList = () => {
         </div>
       </ModalWindow>
     </div>
+      </Profiler>
      </>
   );
 };
