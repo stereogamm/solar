@@ -8,6 +8,8 @@ import { useBodiesStore } from "../../../stores/useBodiesStore";
 import { CustomTextInput } from "../../../Shared/ui/textInput"
 import { Profiler } from "react";
 import { type ProfilerOnRenderCallback } from "react";
+import { NoData } from "../../../Shared/ui/noData/index";
+
 
 
 export type Body = {
@@ -35,6 +37,7 @@ type Mass = {
 export const BodiesList = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedBody, setSelectedBody] = useState<Body | null>(null);
+  const [inputValue, setInputValue] = useState<string>('')
 
   const fetchBodies = useBodiesStore((store) => store.fetchBodies);
   const bodyList = useBodiesStore((store) => store.bodies);
@@ -62,6 +65,15 @@ export const BodiesList = () => {
     );
   }
 
+  const onFilterValue = (event:any) => {
+    setInputValue(event.target.value)
+  }
+
+
+  const filteredList = (bodyList?.filter((body) => body.englishName.trim().toLowerCase().includes(inputValue.trim().toLowerCase())))
+   
+  
+    
   const onRender : ProfilerOnRenderCallback = (id, phase, actualDuration, baseDuration, startTime, commitTime)  => {
     console.log(`Component ${id} has ${phase} during ${actualDuration}ms ${baseDuration} ${startTime} ${commitTime}`) //added to test profiler react feature
   }
@@ -76,12 +88,15 @@ export const BodiesList = () => {
       label="Body search"
       description="enter the body's name"
       placeholder=""
+      onChange={onFilterValue}
+      value={inputValue}
     />
     </div>
 
-
     <div className={styles.list}>
-      {bodyList?.map((body: any) => (
+      {filteredList?.length === 0? (<NoData text={"change search parameters"} />) : null}
+      {inputValue?  
+      (filteredList?.map((body: any) => (
         <PlanetCard
           key={body.id}
           id={body.id}
@@ -90,7 +105,17 @@ export const BodiesList = () => {
           englishName={body.englishName}
           discoveredBy={body.discoveredBy}
         />
-      ))}
+      ))) :
+      (bodyList?.map((body: any) => (
+        <PlanetCard
+          key={body.id}
+          id={body.id}
+          onClick={() => onOpenModalWindow(body)}
+          name={body.name}
+          englishName={body.englishName}
+          discoveredBy={body.discoveredBy}
+        />
+      )))}
       <ModalWindow isOpened={isModalVisible} onClose={onCloseModalWindow}>
         <div>
           {selectedBody && (
