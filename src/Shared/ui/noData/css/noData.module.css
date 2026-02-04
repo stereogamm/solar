@@ -1,0 +1,10 @@
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #d1a24b;
+}
+h2 {
+    font-weight: 200;
+}
