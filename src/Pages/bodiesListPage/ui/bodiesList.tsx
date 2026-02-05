@@ -39,6 +39,7 @@ export const BodiesList = () => {
   const [selectedBody, setSelectedBody] = useState<Body | null>(null);
   const [inputValue, setInputValue] = useState<string>('')
 
+
   const fetchBodies = useBodiesStore((store) => store.fetchBodies);
   const bodyList = useBodiesStore((store) => store.bodies);
   const loading = useBodiesStore((store) => store.loading);
@@ -90,6 +91,7 @@ export const BodiesList = () => {
       placeholder=""
       onChange={onFilterValue}
       value={inputValue}
+      autoFocus
     />
     </div>
 
