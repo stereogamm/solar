@@ -38,7 +38,7 @@ export const BodiesList = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedBody, setSelectedBody] = useState<Body | null>(null);
   const [inputValue, setInputValue] = useState<string>('')
-
+  const [debouncedInputValue, setDebouncedInputValue] = useState<string>('')
 
   const fetchBodies = useBodiesStore((store) => store.fetchBodies);
   const bodyList = useBodiesStore((store) => store.bodies);
@@ -52,31 +52,41 @@ export const BodiesList = () => {
   const onCloseModalWindow = () => {
     setIsModalVisible(false);
     setSelectedBody(null);
+    setInputValue('')
   };
 
   useEffect(() => {
     fetchBodies();
   }, [fetchBodies]);
 
-  if (loading) {
+
+  const onFilterValue = (event : React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value)
+  }
+
+    useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDebouncedInputValue(inputValue)
+    }, 300) 
+  
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [inputValue])
+
+  const filteredList = (bodyList?.filter((body) => body.englishName.trim().toLowerCase().includes(debouncedInputValue.trim().toLowerCase())))
+   
+    
+  const onRender : ProfilerOnRenderCallback = (id, phase, actualDuration, baseDuration, startTime, commitTime)  => {
+    console.log(`Component ${id} has ${phase} during ${actualDuration}ms ${baseDuration} ${startTime} ${commitTime}`) //added to test profiler react feature
+  }
+
+    if (loading) {
     return (
       <div className={styles.loader}>
         <LoaderCustom />
       </div>
     );
-  }
-
-  const onFilterValue = (event:any) => {
-    setInputValue(event.target.value)
-  }
-
-
-  const filteredList = (bodyList?.filter((body) => body.englishName.trim().toLowerCase().includes(inputValue.trim().toLowerCase())))
-   
-  
-    
-  const onRender : ProfilerOnRenderCallback = (id, phase, actualDuration, baseDuration, startTime, commitTime)  => {
-    console.log(`Component ${id} has ${phase} during ${actualDuration}ms ${baseDuration} ${startTime} ${commitTime}`) //added to test profiler react feature
   }
 
   return (
@@ -98,7 +108,7 @@ export const BodiesList = () => {
     <div className={styles.list}>
       {filteredList?.length === 0? (<NoData text={"change search parameters"} />) : null}
       {inputValue?  
-      (filteredList?.map((body: any) => (
+      (filteredList?.map((body: Body) => (
         <PlanetCard
           key={body.id}
           id={body.id}
@@ -108,7 +118,7 @@ export const BodiesList = () => {
           discoveredBy={body.discoveredBy}
         />
       ))) :
-      (bodyList?.map((body: any) => (
+      (bodyList?.map((body: Body) => (
         <PlanetCard
           key={body.id}
           id={body.id}
@@ -170,3 +180,7 @@ export const BodiesList = () => {
      </>
   );
 };
+
+
+
+
