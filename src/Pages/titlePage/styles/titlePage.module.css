@@ -1,12 +1,10 @@
 .main {
   display: flex;
   flex: 1;       
-  min-height: 0;
 }
 
 .title-block {
   flex: 0 0 20%;
-  padding: 5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -14,17 +12,8 @@
 
 h1 {
   margin: 0;
-  color: rgb(252, 199, 149);
-  font-size: 3.5rem;
-}
-
-.title {
-  color: rgb(255, 255, 255);
-}
-
-.subtitle {
-  font-size: 0.9rem;
-  align-items: end;
+  color: rgb(195, 197, 198);
+  font-size: 5.5rem;
 }
 
 .logo-block {

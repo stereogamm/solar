@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { PlanetCard } from "../../../Widgets/card/index";
 import styles from "../css/bodiesList.module.css";
 import { LoaderCustom } from "../../../Shared/ui/loader";
@@ -38,7 +38,8 @@ export const BodiesList = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedBody, setSelectedBody] = useState<Body | null>(null);
   const [inputValue, setInputValue] = useState<string>('')
-  const [debouncedInputValue, setDebouncedInputValue] = useState<string>('')
+  const [debouncingValue, setDebouncingValue] = useState<string>('')
+
 
   const fetchBodies = useBodiesStore((store) => store.fetchBodies);
   const bodyList = useBodiesStore((store) => store.bodies);
@@ -59,22 +60,24 @@ export const BodiesList = () => {
     fetchBodies();
   }, [fetchBodies]);
 
+useEffect(() => {
+  const timeout = setTimeout(() => {
+    setDebouncingValue(inputValue)
+  }, 3000)
+
+  return () => {
+    clearTimeout(timeout)
+  }
+}, [inputValue])
+
 
   const onFilterValue = (event : React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value)
   }
 
-    useEffect(() => {
-    const timeout = setTimeout(() => {
-      setDebouncedInputValue(inputValue)
-    }, 300) 
-  
-    return () => {
-      clearTimeout(timeout)
-    }
-  }, [inputValue])
 
-  const filteredList = (bodyList?.filter((body) => body.englishName.trim().toLowerCase().includes(debouncedInputValue.trim().toLowerCase())))
+
+  const filteredList = (bodyList?.filter((body) => body.englishName.trim().toLowerCase().includes(debouncingValue.trim().toLowerCase())))
    
     
   const onRender : ProfilerOnRenderCallback = (id, phase, actualDuration, baseDuration, startTime, commitTime)  => {
@@ -90,7 +93,7 @@ export const BodiesList = () => {
   }
 
   return (
-    <>
+    <div className="styles.wrapper">
     <Profiler id="BodiesList" onRender={onRender}> 
     <div className={styles["input-wrapper"]}>
     <CustomTextInput
@@ -177,10 +180,9 @@ export const BodiesList = () => {
       </ModalWindow>
     </div>
       </Profiler>
-     </>
+     </div>
   );
 };
-
 
 
 

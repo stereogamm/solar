@@ -7,8 +7,6 @@ export function TitlePage() {
     <div className={styles.main}>
       <div className={styles["title-block"]}>
         <h1>Solaris</h1>
-        <div className={styles.title}>
-        </div>
       </div>
       <div className={styles["logo-block"]}>
         <Background />

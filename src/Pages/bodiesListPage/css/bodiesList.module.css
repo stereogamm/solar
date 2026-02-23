@@ -1,8 +1,12 @@
+/* * {
+    outline: 1px solid red;
+} */
+
 .list {
-    padding: 5rem 3rem;
-    width: 100vw;
+    padding: 5rem 1rem;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-items: center;
     align-items: center;
     gap: 3rem;
@@ -16,9 +20,8 @@
 }
 
 .wrapper {
-     display: flex;
-     flex-direction: column;
-     padding: 1rem;
+    display: flex;
+    flex-direction: column; 
 }
 
 h2 {
@@ -36,20 +39,11 @@ ul {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-   
 }
 
 .input-wrapper {
     padding: 3rem;
     align-self: flex-end;
+    max-width: 30rem;
 }
 
-/* .label {
-    color: red;
-}
-
-.input {
-    border: 1px solid red;
-    color: red;
-    background: red;
-} */
