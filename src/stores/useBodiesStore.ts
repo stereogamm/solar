@@ -1,6 +1,6 @@
 import { create } from "zustand"
 import { devtools } from "zustand/middleware"
-import { getBodies } from "../Shared/api/api-client"
+import { getBodies } from "../Shared/api/api-client/api-client"
 import { type Body }  from "../Pages/bodiesListPage/ui/bodiesList"
 
 type Bodies = Body[];
@@ -11,8 +11,6 @@ type BodiesStore = {
     error: unknown;
     fetchBodies: () => Promise<void>;
 }
-
-
 
 export const useBodiesStore = create<BodiesStore>()(devtools((set) => ({
     loading: false,
