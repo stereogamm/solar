@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { PlanetCard } from "../../../Widgets/card/index";
 import styles from "../css/bodiesList.module.css";
 import { LoaderCustom } from "../../../Shared/ui/loader";
