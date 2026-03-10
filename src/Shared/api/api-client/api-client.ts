@@ -7,8 +7,6 @@ export const getBodies = async () => {
     return bodies
 }
 
-
-//api client without proxy api client
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 
 interface RequestOptions {
@@ -22,10 +20,10 @@ const baseURL = '/api'
 const defaultHeaders: Record<string, string> = {
     'Content-Type': 'Application/json; charset=utf-8',
 }
-export async function apiClient(url: string, options: RequestOptions = {}) {
+export async function apiClient(path: string, options: RequestOptions = {}) {
     const { method='GET', body, headers={} } = options
 
-    const response = await fetch(`${baseURL}${url}`, {
+    const response = await fetch(`${baseURL}/${path}/`, {
         method: method,
         headers: {
             ...defaultHeaders,
