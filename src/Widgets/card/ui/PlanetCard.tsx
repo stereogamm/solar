@@ -1,6 +1,6 @@
 
 import { IconStar } from "@tabler/icons-react";
-import Img from "../../../Assets/images/milky-way.jpg";
+import Img from "../../../../public/images/milky-way.jpg"
 import { useLikeBody } from '../../../stores/useBodiesCounterStore'
 import { useState } from "react"
 
