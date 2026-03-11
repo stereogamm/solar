@@ -1,6 +1,7 @@
 import { create } from "zustand"
 import { devtools } from "zustand/middleware"
-import { getBodies } from "../Shared/api/api-client/api-client"
+// import { getBodies } from "../Shared/api/api-client/api-client"
+import { getBodiesList } from "../Shared/api/api-client/api-client"
 import { type Body }  from "../Pages/bodiesListPage/ui/bodiesList"
 
 type Bodies = Body[];
@@ -21,8 +22,9 @@ export const useBodiesStore = create<BodiesStore>()(devtools((set) => ({
         set({loading : true, error: null})
 
         try{
-            const data = await getBodies()
-            set({bodies: data.bodies, loading : false})
+            // const data = await getBodies()
+            const data = await getBodiesList()
+            set({bodies: data.bodies , loading : false})
         } catch(error) {
             set({ error: error, loading: false})
         } 

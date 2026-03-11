@@ -1,11 +1,11 @@
-import bodies from "../mockApiData/bodies.json"
+// import bodies from "../mockApiData/bodies.json"
 
 //mock data fn
-export const getBodies = async () => {
-    await new Promise(res => setTimeout(res, 100))
+// export const getBodies = async () => {
+//     await new Promise(res => setTimeout(res, 100))
   
-    return bodies
-}
+//     return bodies
+// }
 
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 
@@ -23,7 +23,7 @@ const defaultHeaders: Record<string, string> = {
 export async function apiClient(path: string, options: RequestOptions = {}) {
     const { method='GET', body, headers={} } = options
 
-    const response = await fetch(`${baseURL}/${path}/`, {
+    const response = await fetch(`${baseURL}/${path}`, {
         method: method,
         headers: {
             ...defaultHeaders,
@@ -44,4 +44,14 @@ export async function apiClient(path: string, options: RequestOptions = {}) {
 
     const data = await response.json()
     return { data, error: null }
+}
+
+
+export const getBodiesList = async () => {
+    const res = await apiClient('bodies')
+    if (res.error) {
+        return []
+    } else {
+       return res.data.bodies
+    }
 }
