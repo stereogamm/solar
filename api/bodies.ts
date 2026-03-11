@@ -5,7 +5,6 @@ const apiURL = 'https://api.le-systeme-solaire.net/rest'
 
 const UUID = process.env.UUID
 
-
 export default async function handler(request: VercelRequest, response: VercelResponse) {
 
     try{
