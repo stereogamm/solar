@@ -24,13 +24,12 @@ export const useBodiesStore = create<BodiesStore>()(devtools((set) => ({
         try{
             // const data = await getBodies()
             const data = await getBodiesList()
-            set({bodies: data.bodies , loading : false})
+            set({bodies: data, loading : false})
         } catch(error) {
             set({ error: error, loading: false})
         } 
     }
 }
-
   ),  { name: "bodies-store"}
  )
 )

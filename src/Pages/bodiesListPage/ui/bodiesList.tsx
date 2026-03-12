@@ -75,8 +75,6 @@ useEffect(() => {
     setInputValue(event.target.value)
   }
 
-
-
   const filteredList = (bodyList?.filter((body) => body.englishName.trim().toLowerCase().includes(debouncingValue.trim().toLowerCase())))
    
     
@@ -93,7 +91,7 @@ useEffect(() => {
   }
 
   return (
-    <div className="styles.wrapper">
+    <div className={styles.wrapper}>
     <Profiler id="BodiesList" onRender={onRender}> 
     <div className={styles["input-wrapper"]}>
     <CustomTextInput
