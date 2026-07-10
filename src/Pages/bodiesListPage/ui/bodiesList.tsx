@@ -9,7 +9,7 @@ import { CustomTextInput } from "../../../Shared/ui/textInput"
 import { Profiler } from "react";
 import { type ProfilerOnRenderCallback } from "react";
 import { NoData } from "../../../Shared/ui/noData/index";
-import { useLocalStorageHook } from "./customLSHook"
+// import { useLocalStorageHook } from "./customLSHook"
 
 
 export type Body = {
@@ -133,7 +133,7 @@ export const BodiesList = () => {
   const [debouncingValue, setDebouncingValue] = useState<string>('')
 
 
-  const [value, setValue] = useLocalStorageHook('name', 'test')
+  // const [value, setValue] = useLocalStorageHook('name', 'test')
   
   const fetchBodies = useBodiesStore((store) => store.fetchBodies);
   const bodyList = useBodiesStore((store) => store.bodies); 
