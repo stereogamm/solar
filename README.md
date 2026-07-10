@@ -12,8 +12,13 @@ The project is dedicated to exploring the Solar System and collecting the most i
 - TanstackQuery
 - Vite
 - CSS
+- React testing library
+- Vitest
 
 ## Run project
 
 npm run dev
 
+## Run tests
+
+npm run test
