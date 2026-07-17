@@ -1,0 +1,56 @@
+.wrapper {
+  display: flex;
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg);
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-8));
+
+  @media (max-width: 48em) {
+    flex-direction: column;
+  }
+}
+
+.form {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-left: 0;
+
+  @media (max-width: 48em) {
+    padding: var(--spacing-xs);
+  }
+}
+
+.fields {
+  margin-top: -12px;
+}
+
+.fieldInput {
+  flex: 1;
+
+    @media (max-width: 48em) {
+      margin-left: 0;
+      margin-top: var(--spacing-xs);
+    }
+}
+
+.fieldsGroup {
+  display: flex;
+
+  @media (max-width: 48em) {
+    flex-direction: column;
+  }
+}
+
+
+.title {
+  @media (max-width: 48em) {
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+.control {
+  @media (max-width: 48em) {
+    flex: 1;
+  }
+}
