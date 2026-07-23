@@ -37,16 +37,17 @@ export const theme = createTheme({
   colors: { black: usedColors },
   primaryColor: "black",
   primaryShade: 6,
+
       components: {
       TextInput: {
         styles: {
           input: {
             border: "1px solid #fdb766",
             backgroundColor: "#000000",
-            color: " #fdb766",
+            color: "#fdb766",
           },
           label: {
-            color: " #fdb766",
+            color: "#fdb766",
           },
           description: {
             color: "#e17800",
@@ -54,5 +55,19 @@ export const theme = createTheme({
           }
         },
       },
+      Button: {
+        styles: {
+          root:{
+            border: "1px solid #fdb766",
+            backgroundColor: "#fdb766",
+            color: "#2a2828",
+            "border-radius": "12px",
+            "&:hover": {
+              backgroundColor: "#000000",
+              color: "#fc8a08",
+            }
+        }
+          }
+      }
     },
 })
