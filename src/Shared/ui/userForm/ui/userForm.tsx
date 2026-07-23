@@ -4,7 +4,6 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 
 export function UserForm() {
-  const [enabled, setEnabled] = useState(false);
 
   const validateLat = (value:string) => {
     if(value.length < 1) {
@@ -13,8 +12,7 @@ export function UserForm() {
       return 'Value should be a number'
     } else if ((Number(value) < -90) || Number(value) > 90){
       return 'Fill in correct value from -90 to +90'
-    }
-      return null
+    } return null
   }
 
     const validateLong = (value:string) => {
@@ -24,8 +22,7 @@ export function UserForm() {
       return 'Value should be a number'
     } else if ((Number(value) < -180) || Number(value) > 180){
       return 'Fill in correct value from -180 to 180'
-    } 
-      return null
+    } return null
   }
 
     const validateAlt = (value:string) => {
@@ -35,8 +32,7 @@ export function UserForm() {
       return 'Value should be a number'
     } else if (Number(value) <= 0){
       return 'Fill in correct value from 0'
-    }  
-      return null
+    } return null
   }
      const validateZone = (value:string) => {
     if(value.length < 1) {
@@ -45,8 +41,7 @@ export function UserForm() {
       return 'Value should be a number'
     } else if ((Number(value) < -12) || Number(value) > 14){
       return 'Fill in correct value from -12 to +14'
-    }  
-      return null
+    } return null
   }
 
   const form = useForm({
@@ -93,7 +88,7 @@ export function UserForm() {
               label="zone" placeholder="Example: +2" />
             </SimpleGrid>
             <Group justify="flex-end" mt="md">
-              <Button disabled={enabled} type="submit" className={styles.control}>
+              <Button type="submit" className={styles.control}>
                 Explore the sky
               </Button>
             </Group>
