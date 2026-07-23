@@ -50,6 +50,7 @@
 }
 
 .control {
+
   @media (max-width: 48em) {
     flex: 1;
   }
