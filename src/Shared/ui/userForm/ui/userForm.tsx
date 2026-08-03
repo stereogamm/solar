@@ -53,12 +53,10 @@ export function UserForm() {
   }
 
   const validateDateTime = (value:string) => {
-    const isoRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/
     if(!value) {
       return 'Field is required'
-    } else if(!isoRegex.test(value)) {
-      return 'Fill data in the correct format'
-    } return null
+    } 
+     return null
   }
 
   const form = useForm({
@@ -77,10 +75,11 @@ export function UserForm() {
       datetime: (value) => (validateDateTime(value))
     },
   })
+
   return (
     <Paper shadow="md" radius="md">
       <div className={styles.wrapper}>
-        <form className={styles.form} onSubmit={form.onSubmit((value)=>console.log(value))}>
+        <form className={styles.form} onSubmit={form.onSubmit((value) => console.log(value))}>
           <Text variant="gradient"
                 gradient={{ from: 'orange', to: 'white', deg: 35 }} 
                 mb="lg" 
@@ -94,21 +93,30 @@ export function UserForm() {
             <SimpleGrid cols={{ base: 1, sm: 2 }}>
               <TextInput ref={inputFocus}
                {...form.getInputProps('latitude')}
-              label="latitude" placeholder="Example: 52.3676"
-              required
+              label="latitude" placeholder="from -90 to +90"
+              pointer={true}
+              withAsterisk
+              key={form.key('latitude')}
               />
               <TextInput 
               {...form.getInputProps('longitude')}
-              label="longitude" placeholder="Example: 4.9041" 
-              required />
+              label="longitude" placeholder="from -180 to 180" 
+              pointer={true}
+              withAsterisk
+              key={form.key('longitude')}/>
               <TextInput 
               {...form.getInputProps('altitude')}
-              label="altitude" placeholder="Height above sea level (meters)" 
-              required />
+              label="altitude" placeholder="Height above sea level (from 0)" 
+              pointer={true}
+              withAsterisk 
+              key={form.key('altitude')}/>
               <TextInput
               {...form.getInputProps('zone')}
-              label="zone" placeholder="Example: +2"
-              required />
+              label="zone" placeholder="from -12 to +14"
+              pointer={true}
+              withAsterisk
+              key={form.key('zone')}
+               />
               <DateTimePicker 
               classNames={{
                 calendarHeader: styles.calendarHeader,
@@ -131,7 +139,10 @@ export function UserForm() {
               label="Pick date and time" 
               placeholder="Pick date and time"
               highlightToday={true}
-              required
+              pointer={true}
+              withAsterisk
+              key={form.key('datetime')}
+              {...form.getInputProps('datetime')}
                />
             </SimpleGrid>
             <Group justify="flex-end" mt="md">
