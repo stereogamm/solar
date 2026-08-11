@@ -55,3 +55,21 @@ export const getBodiesList = async () => {
        return res.data.bodies
     }
 }
+
+export const returnCustomPositionBodies = async () => {
+    const res = await apiClient('positions', {
+        body: {
+            lat: '1',
+            lon: '1',
+            elev: '1',
+            datetime: '1',
+            zone: '1',
+        },
+    })
+
+    if(res.error) {
+        return []
+    } else {
+        return res.data.positions
+    }
+}
