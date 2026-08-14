@@ -5,7 +5,28 @@ import { DateTimePicker } from '@mantine/dates';
 import { useRef, useEffect } from 'react';
 
 
-export function UserForm() {
+type FormData = {
+      lat: string,
+      lon: string,
+      elev: string,
+      datetime: string,
+      zone: string,
+}
+
+type setSearchParamsFn = {
+  setSearchParamsFn: (value: FormData) => void;
+  initialValue?: FormData
+}
+
+export function UserForm({ setSearchParamsFn , initialValue } : setSearchParamsFn ) {
+
+  const {lat, lon, elev, datetime, zone} = initialValue?? {
+      lat: '',
+      lon: '',
+      elev: '',
+      datetime: '',
+      zone: '',
+  }
 
   const inputFocus = useRef<HTMLInputElement | null>(null)
 
@@ -61,25 +82,26 @@ export function UserForm() {
 
   const form = useForm({
     initialValues: {
-      latitude: '',
-      longitude: '',
-      altitude: '',
-      zone: '',
-      datetime: '',
+      lat: lat,
+      lon: lon,
+      elev: elev,
+      datetime: datetime,
+      zone: zone,
+      
     },
     validate: {
-      latitude: (value) => (validateLat(value)),
-      longitude: (value) => (validateLong(value)),
-      altitude: (value) => (validateAlt(value)),
+      lat: (value) => (validateLat(value)),
+      lon: (value) => (validateLong(value)),
+      elev: (value) => (validateAlt(value)),
+      datetime: (value) => (validateDateTime(value)),
       zone: (value) => (validateZone(value)),
-      datetime: (value) => (validateDateTime(value))
     },
   })
 
   return (
     <Paper shadow="md" radius="md">
       <div className={styles.wrapper}>
-        <form className={styles.form} onSubmit={form.onSubmit((value) => console.log(value))}>
+        <form className={styles.form} onSubmit={form.onSubmit((value) => setSearchParamsFn(value))}>
           <Text variant="gradient"
                 gradient={{ from: 'orange', to: 'white', deg: 35 }} 
                 mb="lg" 
@@ -92,30 +114,33 @@ export function UserForm() {
           <div className={styles.fields}>
             <SimpleGrid cols={{ base: 1, sm: 2 }}>
               <TextInput ref={inputFocus}
-               {...form.getInputProps('latitude')}
-              label="latitude" placeholder="from -90 to +90"
+               {...form.getInputProps('lat')}
+              label="Latitude for observer" placeholder="from -90 to +90"
               pointer={true}
               withAsterisk
-              key={form.key('latitude')}
+              key={form.key('lat')}
               />
               <TextInput 
-              {...form.getInputProps('longitude')}
-              label="longitude" placeholder="from -180 to 180" 
+              {...form.getInputProps('lon')}
+              label="Longitude for observer" placeholder="from -180 to 180" 
               pointer={true}
               withAsterisk
-              key={form.key('longitude')}/>
+              key={form.key('lon')}
+             />
               <TextInput 
-              {...form.getInputProps('altitude')}
-              label="altitude" placeholder="Height above sea level (from 0)" 
+              {...form.getInputProps('elev')}
+              label="Altitude for observer in meter" placeholder="Height above sea level (from 0)" 
               pointer={true}
               withAsterisk 
-              key={form.key('altitude')}/>
+              key={form.key('elev')}
+              />
               <TextInput
               {...form.getInputProps('zone')}
-              label="zone" placeholder="from -12 to +14"
+              label="Time Zone for observer" placeholder="from -12 to +14"
               pointer={true}
               withAsterisk
               key={form.key('zone')}
+            
                />
               <DateTimePicker 
               classNames={{
@@ -143,6 +168,7 @@ export function UserForm() {
               withAsterisk
               key={form.key('datetime')}
               {...form.getInputProps('datetime')}
+              
                />
             </SimpleGrid>
             <Group justify="flex-end" mt="md">

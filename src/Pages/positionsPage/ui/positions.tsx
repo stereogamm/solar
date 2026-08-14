@@ -1,4 +1,5 @@
 import { UserForm } from '../../../Shared/ui/userForm/ui/userForm'
+import { useSearchParams } from "react-router";
 
 export type Position = {
       name: string,
@@ -37,7 +38,18 @@ export type PositionApiResponse = {
 export type Positions = Position[]
 
 export const Positions = () => {
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const initialValue = {
+        lat: searchParams.get('lat') ?? '',
+        lon: searchParams.get('lon') ?? '',
+        elev: searchParams.get('elev') ?? '',
+        datetime: searchParams.get('datetime') ?? '',
+        zone: searchParams.get('zone') ?? '',
+    }
+
+
     return (
-        <UserForm />
+        <UserForm initialValue={initialValue} setSearchParamsFn={(value) => setSearchParams(value)}/>
     )
 }
