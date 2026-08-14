@@ -55,3 +55,13 @@ export const getBodiesList = async () => {
        return res.data.bodies
     }
 }
+
+export const returnCustomPositionBodies = async () => {
+    const res = await apiClient('positions')
+
+    if(res.error) {
+        return []
+    } else {
+        return res.data.positions
+    }
+}
