@@ -1,5 +1,6 @@
 import { UserForm } from '../../../Shared/ui/userForm/ui/userForm'
 import { useSearchParams } from "react-router";
+import { useCustomPositionBodiesStore } from '../../../stores/useCustomPositionBodies';
 
 export type Position = {
       name: string,
@@ -40,6 +41,10 @@ export type Positions = Position[]
 export const Positions = () => {
     const [searchParams, setSearchParams] = useSearchParams()
 
+  const fetchBodies = useCustomPositionBodiesStore((store) => store.getCustomBodies);
+  const bodyList = useCustomPositionBodiesStore((store) => store.bodies); 
+  const loading = useCustomPositionBodiesStore((store) => store.loading);
+
     const initialValue = {
         lat: searchParams.get('lat') ?? '',
         lon: searchParams.get('lon') ?? '',
@@ -48,8 +53,20 @@ export const Positions = () => {
         zone: searchParams.get('zone') ?? '',
     }
 
+const handleSubmit = () => {
+    fetchBodies(initialValue)
+}
 
     return (
+        <>
         <UserForm initialValue={initialValue} setSearchParamsFn={(value) => setSearchParams(value)}/>
+            <button onClick={handleSubmit} >get bodies</button>
+            {loading && <div>loading...</div>}
+            {bodyList?.map((body) => {
+                return <div key={body.name}>{body.name}</div>
+            })}
+        </>
+        
+
     )
 }

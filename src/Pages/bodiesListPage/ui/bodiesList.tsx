@@ -137,7 +137,6 @@ export const BodiesList = () => {
   
   const fetchBodies = useBodiesStore((store) => store.fetchBodies);
   const bodyList = useBodiesStore((store) => store.bodies); 
-
   const loading = useBodiesStore((store) => store.loading);
 
   const onOpenModalWindow = (body: Body) => {
