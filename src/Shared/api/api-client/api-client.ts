@@ -1,10 +1,16 @@
 // import bodies from "../mockApiData/bodies.json"
+// import customBodies from "../mockApiData/customPositionBodies.json" 
 
-//mock data fn
+//mock data fns
+
 // export const getBodies = async () => {
 //     await new Promise(res => setTimeout(res, 100))
-  
 //     return bodies
+// }
+
+// export const getCustomBodies = async () => {
+//     await new Promise(res => setTimeout(res, 100))
+//     return customBodies
 // }
 
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
@@ -13,17 +19,20 @@ interface RequestOptions {
     method?: Method
     body?: Record<string, unknown>
     headers?: Record <string, string>
+    params?: Record<string, string>
 }
 
-const baseURL = '/api'
+const baseURL = '/rest'
 
 const defaultHeaders: Record<string, string> = {
     'Content-Type': 'Application/json; charset=utf-8',
 }
 export async function apiClient(path: string, options: RequestOptions = {}) {
-    const { method='GET', body, headers={} } = options
+    const { method='GET', body, headers={}, params } = options
 
-    const response = await fetch(`${baseURL}/${path}`, {
+    const query = params? `?${new URLSearchParams(params).toString()}` : ''
+
+    const response = await fetch(`${baseURL}/${path}${query}`, {
         method: method,
         headers: {
             ...defaultHeaders,
@@ -56,12 +65,15 @@ export const getBodiesList = async () => {
     }
 }
 
-export const returnCustomPositionBodies = async () => {
-    const res = await apiClient('positions')
+export const returnCustomPositionBodies = async (params : Record<string, string>) => {
+    const res = await apiClient('positions', { params})
+    // const res = await getCustomBodies()
 
     if(res.error) {
         return []
     } else {
         return res.data.positions
     }
+
+    // return res.positions //mock data
 }

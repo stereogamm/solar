@@ -8,7 +8,7 @@ type CustomPositionBodies = {
     loading: boolean,
     bodies: Positions | null,
     error: unknown,
-    getCustomBodies: () => Promise<void>,
+    getCustomBodies: (params: Record<string, string>) => Promise<void>,
 }
 
 export const useCustomPositionBodiesStore = create<CustomPositionBodies>()(devtools((set) => ({
@@ -16,11 +16,11 @@ export const useCustomPositionBodiesStore = create<CustomPositionBodies>()(devto
     bodies: null,
     error: null,
 
-    getCustomBodies : async () => {
+    getCustomBodies : async (params) => {
         set({loading: true, error: null})
 
         try {
-            const data = await returnCustomPositionBodies()
+            const data = await returnCustomPositionBodies(params)
 
             set({bodies: data, loading: false})
         } catch(error) {
