@@ -1,4 +1,3 @@
-
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 const apiURL = 'https://api.le-systeme-solaire.net/rest'
