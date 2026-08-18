@@ -22,7 +22,7 @@ interface RequestOptions {
     params?: Record<string, string>
 }
 
-const baseURL = '/rest'
+const baseURL = '/api'
 
 const defaultHeaders: Record<string, string> = {
     'Content-Type': 'Application/json; charset=utf-8',
