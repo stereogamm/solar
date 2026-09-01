@@ -10,6 +10,7 @@ import { Profiler } from "react";
 import { type ProfilerOnRenderCallback } from "react";
 import { NoData } from "../../../Shared/ui/noData/index";
 // import { useLocalStorageHook } from "./customLSHook"
+// import bodyList from "../../../Shared/api/mockApiData/bodies.json"
 
 
 export type Body = {
@@ -36,96 +37,96 @@ type Mass = {
 
 export const BodiesList = () => {
 
-// const bodyList = [
-//                 {
-//             "id": "lune",
-//             "name": "La Lune",
-//             "englishName": "Moon",
-//             "isPlanet": false,
-//             "moons": null,
-//             "semimajorAxis": 384400,
-//             "perihelion": 363300,
-//             "aphelion": 405500,
-//             "eccentricity": 0.05490,
-//             "inclination": 5.14500,
-//             "mass": {
-//                 "massValue": 7.34600,
-//                 "massExponent": 22
-//             },
-//             "vol": {
-//                 "volValue": 2.19680,
-//                 "volExponent": 10
-//             },
-//             "density": 3.34400,
-//             "gravity": 1.62000,
-//             "escape": 2380.00000,
-//             "meanRadius": 1737.00000,
-//             "equaRadius": 1738.10000,
-//             "polarRadius": 1736.00000,
-//             "flattening": 0.00120,
-//             "dimension": "",
-//             "sideralOrbit": 27.32170,
-//             "sideralRotation": 655.72800,
-//             "aroundPlanet": {
-//                 "planet": "terre",
-//                 "rel": "https://api.le-systeme-solaire.net/rest/bodies/terre"
-//             },
-//             "discoveredBy": "",
-//             "discoveryDate": "",
-//             "alternativeName": "",
-//             "axialTilt": 6.68,
-//             "avgTemp": 0,
-//             "mainAnomaly": 0.00000,
-//             "argPeriapsis": 0.00000,
-//             "longAscNode": 0.00000,
-//             "bodyType": "Moon",
-//             "rel": "https://api.le-systeme-solaire.net/rest/bodies/lune"
-//         },
-//              {
-//             "id": "deimos",
-//             "name": "Deïmos",
-//             "englishName": "Deimos",
-//             "isPlanet": false,
-//             "moons": null,
-//             "semimajorAxis": 23459,
-//             "perihelion": 23456,
-//             "aphelion": 23471,
-//             "eccentricity": 0.00020,
-//             "inclination": 1.07500,
-//             "mass": {
-//                 "massValue": 1.47620,
-//                 "massExponent": 15
-//             },
-//             "vol": {
-//                 "volValue": 9.99780,
-//                 "volExponent": 3
-//             },
-//             "density": 1.47100,
-//             "gravity": 0.00300,
-//             "escape": 5.55600,
-//             "meanRadius": 6.20000,
-//             "equaRadius": 7.80000,
-//             "polarRadius": 5.10000,
-//             "flattening": 0.00000,
-//             "dimension": "15.0 × 12 × 10.4 ",
-//             "sideralOrbit": 1.26244,
-//             "sideralRotation": 30.29856,
-//             "aroundPlanet": {
-//                 "planet": "mars",
-//                 "rel": "https://api.le-systeme-solaire.net/rest/bodies/mars"
-//             },
-//             "discoveredBy": "Asaph Hall",
-//             "discoveryDate": "12/08/1877",
-//             "alternativeName": "",
-//             "axialTilt": 0,
-//             "avgTemp": 0,
-//             "mainAnomaly": 0.00000,
-//             "argPeriapsis": 0.00000,
-//             "longAscNode": 0.00000,
-//             "bodyType": "Moon",
-//             "rel": "https://api.le-systeme-solaire.net/rest/bodies/deimos"
-//         },
-// ]
+const bodyList = [
+                {
+            "id": "lune",
+            "name": "La Lune",
+            "englishName": "Moon",
+            "isPlanet": false,
+            "moons": null,
+            "semimajorAxis": 384400,
+            "perihelion": 363300,
+            "aphelion": 405500,
+            "eccentricity": 0.05490,
+            "inclination": 5.14500,
+            "mass": {
+                "massValue": 7.34600,
+                "massExponent": 22
+            },
+            "vol": {
+                "volValue": 2.19680,
+                "volExponent": 10
+            },
+            "density": 3.34400,
+            "gravity": 1.62000,
+            "escape": 2380.00000,
+            "meanRadius": 1737.00000,
+            "equaRadius": 1738.10000,
+            "polarRadius": 1736.00000,
+            "flattening": 0.00120,
+            "dimension": "",
+            "sideralOrbit": 27.32170,
+            "sideralRotation": 655.72800,
+            "aroundPlanet": {
+                "planet": "terre",
+                "rel": "https://api.le-systeme-solaire.net/rest/bodies/terre"
+            },
+            "discoveredBy": "",
+            "discoveryDate": "",
+            "alternativeName": "",
+            "axialTilt": 6.68,
+            "avgTemp": 0,
+            "mainAnomaly": 0.00000,
+            "argPeriapsis": 0.00000,
+            "longAscNode": 0.00000,
+            "bodyType": "Moon",
+            "rel": "https://api.le-systeme-solaire.net/rest/bodies/lune"
+        },
+             {
+            "id": "deimos",
+            "name": "Deïmos",
+            "englishName": "Deimos",
+            "isPlanet": false,
+            "moons": null,
+            "semimajorAxis": 23459,
+            "perihelion": 23456,
+            "aphelion": 23471,
+            "eccentricity": 0.00020,
+            "inclination": 1.07500,
+            "mass": {
+                "massValue": 1.47620,
+                "massExponent": 15
+            },
+            "vol": {
+                "volValue": 9.99780,
+                "volExponent": 3
+            },
+            "density": 1.47100,
+            "gravity": 0.00300,
+            "escape": 5.55600,
+            "meanRadius": 6.20000,
+            "equaRadius": 7.80000,
+            "polarRadius": 5.10000,
+            "flattening": 0.00000,
+            "dimension": "15.0 × 12 × 10.4 ",
+            "sideralOrbit": 1.26244,
+            "sideralRotation": 30.29856,
+            "aroundPlanet": {
+                "planet": "mars",
+                "rel": "https://api.le-systeme-solaire.net/rest/bodies/mars"
+            },
+            "discoveredBy": "Asaph Hall",
+            "discoveryDate": "12/08/1877",
+            "alternativeName": "",
+            "axialTilt": 0,
+            "avgTemp": 0,
+            "mainAnomaly": 0.00000,
+            "argPeriapsis": 0.00000,
+            "longAscNode": 0.00000,
+            "bodyType": "Moon",
+            "rel": "https://api.le-systeme-solaire.net/rest/bodies/deimos"
+        },
+]
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedBody, setSelectedBody] = useState<Body | null>(null);
@@ -136,7 +137,7 @@ export const BodiesList = () => {
   // const [value, setValue] = useLocalStorageHook('name', 'test')
   
   const fetchBodies = useBodiesStore((store) => store.fetchBodies);
-  const bodyList = useBodiesStore((store) => store.bodies); 
+  // const bodyList = useBodiesStore((store) => store.bodies); 
   const loading = useBodiesStore((store) => store.loading);
 
   const onOpenModalWindow = (body: Body) => {
