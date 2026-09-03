@@ -3,7 +3,6 @@ import {
   stringToDecimal,
   getPositionFromAzAlt,
 } from "../../../Shared/utils/stringToDecimal";
-import { PLANET_COLORS } from "../../../Shared/configs/meshColorPlanetMaterial/planetColorMaterial";
 import { useState, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
