@@ -7,7 +7,9 @@
 :root[data-mantine-color-scheme='dark'] {
   --mantine-color-body: #000000;   
   --mantine-color-text: #f7f9f6; 
-  --mantine-color-border: 2px rgba(249, 196, 132, 0.815) solid; 
+  --mantine-border: 2px rgba(249, 196, 132, 0.815) solid; 
+  --mantine-text: #dcdbd9;
+  --mantine-accent-text: #fec580;
 }
 
 :root {

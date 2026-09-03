@@ -1,92 +1,92 @@
 {
-    "positions": [
-        {
-            "name": "Soleil",
-            "ra": "10h 20min 24s",
-            "dec": "10°20'31\"",
-            "az": "77°45'54\"",
-            "alt": "48°27'15\""
-        },
-        {
-            "name": "Lune",
-            "ra": "20h 59min 32s",
-            "dec": "-18°24'19\"",
-            "az": "231°39'13\"",
-            "alt": "-64°18'37\""
-        },
-        {
-            "name": "Mercure",
-            "ra": "10h 17min 56s",
-            "dec": "12°28'01\"",
-            "az": "84°27'06\"",
-            "alt": "58°44'12\""
-        },
-        {
-            "name": "Venus",
-            "ra": "13h 04min 06s",
-            "dec": "-9°43'55\"",
-            "az": "100°12'40\"",
-            "alt": "7°13'38\""
-        },
-        {
-            "name": "Mars",
-            "ra": "6h 42min 49s",
-            "dec": "23°31'23\"",
-            "az": "329°16'37\"",
-            "alt": "65°50'21\""
-        },
-        {
-            "name": "Jupiter",
-            "ra": "9h 00min 31s",
-            "dec": "17°32'43\"",
-            "az": "53°36'49\"",
-            "alt": "64°35'28\""
-        },
-        {
-            "name": "Saturne",
-            "ra": "0h 55min 25s",
-            "dec": "3°04'30\"",
-            "az": "273°38'49\"",
-            "alt": "-9°50'28\""
-        },
-        {
-            "name": "Uranus",
-            "ra": "4h 14min 57s",
-            "dec": "21°05'12\"",
-            "az": "294°36'10\"",
-            "alt": "38°00'57\""
-        },
-        {
-            "name": "Neptune",
-            "ra": "0h 16min 08s",
-            "dec": "0°12'44\"",
-            "az": "271°18'28\"",
-            "alt": "-19°48'45\""
-        },
-        {
-            "name": "Pluton",
-            "ra": "20h 28min 03s",
-            "dec": "-23°31'05\"",
-            "az": "210°37'16\"",
-            "alt": "-65°52'22\""
-        }
-    ],
-    "location": {
-        "latitude": 3,
-        "longitude": 2,
-        "elevation": 3,
-        "timezone": 4
+  "positions": [
+    {
+      "name": "Soleil",
+      "ra": "10h 20min 24s",
+      "dec": "10°20'31\"",
+      "az": "77°45'54\"",
+      "alt": "48°27'15\""
     },
-    "time_info": {
-        "calculated_for_utc": "2026-08-26 09:09:00 UTC",
-        "local_time_display": "2026-08-26 13:09:00 (UTC+4)",
-        "universal_time_ut": "9h 09min 00s",
-        "universal_time_decimal": 9.15,
-        "julian_day": 2461278.88125,
-        "day_number_j2000": 9735.38,
-        "greenwich_sidereal_time": "7h 27min 33s",
-        "local_sidereal_time": "7h 35min 33s",
-        "gst_decimal": 7.4593,
-        "lst_decimal": 7.5927
+    {
+      "name": "Lune",
+      "ra": "20h 59min 32s",
+      "dec": "-18°24'19\"",
+      "az": "231°39'13\"",
+      "alt": "-64°18'37\""
+    },
+    {
+      "name": "Mercure",
+      "ra": "10h 17min 56s",
+      "dec": "12°28'01\"",
+      "az": "84°27'06\"",
+      "alt": "58°44'12\""
+    },
+    {
+      "name": "Venus",
+      "ra": "13h 04min 06s",
+      "dec": "-9°43'55\"",
+      "az": "100°12'40\"",
+      "alt": "7°13'38\""
+    },
+    {
+      "name": "Mars",
+      "ra": "6h 42min 49s",
+      "dec": "23°31'23\"",
+      "az": "329°16'37\"",
+      "alt": "65°50'21\""
+    },
+    {
+      "name": "Jupiter",
+      "ra": "9h 00min 31s",
+      "dec": "17°32'43\"",
+      "az": "53°36'49\"",
+      "alt": "64°35'28\""
+    },
+    {
+      "name": "Saturne",
+      "ra": "0h 55min 25s",
+      "dec": "3°04'30\"",
+      "az": "273°38'49\"",
+      "alt": "-9°50'28\""
+    },
+    {
+      "name": "Uranus",
+      "ra": "4h 14min 57s",
+      "dec": "21°05'12\"",
+      "az": "294°36'10\"",
+      "alt": "38°00'57\""
+    },
+    {
+      "name": "Neptune",
+      "ra": "0h 16min 08s",
+      "dec": "0°12'44\"",
+      "az": "271°18'28\"",
+      "alt": "-19°48'45\""
+    },
+    {
+      "name": "Pluton",
+      "ra": "20h 28min 03s",
+      "dec": "-23°31'05\"",
+      "az": "210°37'16\"",
+      "alt": "-65°52'22\""
     }
+  ],
+  "location": {
+    "latitude": 3,
+    "longitude": 2,
+    "elevation": 3,
+    "timezone": 4
+  },
+  "time_info": {
+    "calculated_for_utc": "2026-08-26 09:09:00 UTC",
+    "local_time_display": "2026-08-26 13:09:00 (UTC+4)",
+    "universal_time_ut": "9h 09min 00s",
+    "universal_time_decimal": 9.15,
+    "julian_day": 2461278.88125,
+    "day_number_j2000": 9735.38,
+    "greenwich_sidereal_time": "7h 27min 33s",
+    "local_sidereal_time": "7h 35min 33s",
+    "gst_decimal": 7.4593,
+    "lst_decimal": 7.5927
+  }
 }
