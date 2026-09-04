@@ -9,6 +9,8 @@ import { Planet } from "./planet";
 import { Soleil } from "./soleil";
 import { OrbitControls, Cloud, Sparkles, Text } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { type FormData } from "../../../Shared/ui/userForm/ui/userForm";
+import { useRef, useEffect } from "react";
 
 export type Position = {
   name: string;
@@ -52,8 +54,17 @@ export const Positions = () => {
   const fetchBodies = useCustomPositionBodiesStore(
     (store) => store.getCustomBodies,
   );
-  //   const bodyList = useCustomPositionBodiesStore((store) => store.bodies);
+  //const bodyList = useCustomPositionBodiesStore((store) => store.bodies);
   const loading = useCustomPositionBodiesStore((store) => store.loading);
+
+  const planetsRenderScroll = useRef<HTMLInputElement | null>(null);
+  const isBodiesExist = useCustomPositionBodiesStore((store) => store.bodies);
+
+  useEffect(() => {
+    if (isBodiesExist) {
+      planetsRenderScroll.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [isBodiesExist]);
 
   const initialValue = {
     lat: searchParams.get("lat") ?? "",
@@ -63,8 +74,9 @@ export const Positions = () => {
     zone: searchParams.get("zone") ?? "",
   };
 
-  const handleSubmit = () => {
-    fetchBodies(initialValue);
+  const handleSubmit = (value: FormData) => {
+    console.log(value);
+    fetchBodies(value);
   };
 
   return (
@@ -73,9 +85,10 @@ export const Positions = () => {
         <UserForm
           initialValue={initialValue}
           setSearchParamsFn={(value) => setSearchParams(value)}
+          submitHandler={handleSubmit}
         />
       </div>
-      <button onClick={handleSubmit}>get bodies</button>
+
       {loading && (
         <div className={styles.loader}>
           <LoaderCustom />
@@ -88,14 +101,12 @@ export const Positions = () => {
         <h2>Observer</h2>
         <span>Latitude {customBodies.location?.latitude}°</span>
         <span>Longitude {customBodies.location?.longitude}°</span>
-        <span>
-          Local time {customBodies.time_info?.local_time_display}
-        </span>
+        <span>Local time {customBodies.time_info?.local_time_display}</span>
         <span>
           Local sidereal time {customBodies.time_info?.local_sidereal_time}
         </span>
       </div>
-      <div className={styles.scene}>
+      <div ref={planetsRenderScroll} className={styles.scene}>
         <Canvas camera={{ position: [0, 1, 12], fov: 80 }}>
           <color attach="background" args={["#000000"]} />
           <mesh position={[0, 5, 0]}>
