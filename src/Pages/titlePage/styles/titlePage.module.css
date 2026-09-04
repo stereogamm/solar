@@ -7,13 +7,7 @@
   flex: 0 0 20%;
   display: flex;
   align-items: center;
-  justify-content: start;
-}
-
-h1 {
-  margin: 0;
-  color: rgb(195, 197, 198);
-  font-size: 5.5rem;
+  justify-content: center;
 }
 
 .logo-block {

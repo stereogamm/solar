@@ -1,9 +1,7 @@
-
 import { IconStar } from "@tabler/icons-react";
-import Img from "../../../../public/images/milky-way.jpg"
-import { useLikeBody } from '../../../stores/useBodiesCounterStore'
-import { useState } from "react"
-
+import Img from "../../../../public/images/milky-way.jpg";
+import { useLikeBody } from "../../../stores/useBodiesCounterStore";
+import { useState } from "react";
 
 import {
   ActionIcon,
@@ -25,8 +23,6 @@ type PlanetCardProps = {
   id: string;
 };
 
-
-
 export const PlanetCard = ({
   name,
   englishName,
@@ -34,15 +30,13 @@ export const PlanetCard = ({
   onClick,
   id,
 }: PlanetCardProps) => {
-
-  const [isFavorite, setFavorite] = useState('')
-  const likeBody =  useLikeBody()
-
+  const [isFavorite, setFavorite] = useState("");
+  const likeBody = useLikeBody();
 
   const addToFavorite = (id: string) => {
     likeBody();
-    setFavorite(id)
-  }
+    setFavorite(id);
+  };
 
   return (
     <>
@@ -66,7 +60,8 @@ export const PlanetCard = ({
             </Badge>
           </Group>
           <Text c="black.22" fz="sm" mt="xs">
-            Discovered by {discoveredBy === "" ? "who know's" : `${discoveredBy}`}
+            Discovered by{" "}
+            {discoveredBy === "" ? "who know's" : `${discoveredBy}`}
           </Text>
         </Card.Section>
         <Card.Section className={styles.section}>
@@ -82,20 +77,24 @@ export const PlanetCard = ({
             color="black.28"
             onClick={onClick}
           >
-           
-            <Text fw={500} c="black.22">
-              explore
-            </Text>
+            <Text fw={500}>explore</Text>
           </Button>
 
-
-          <ActionIcon disabled={isFavorite === id? true : false} onClick={() => addToFavorite(id)} variant="default" radius="md" size={30}>
-            <IconStar fill="currentColor" stroke={1.5} className={`${styles.like}}  ${isFavorite === id? styles.active : styles.like} `} />
+          <ActionIcon
+            disabled={isFavorite === id ? true : false}
+            onClick={() => addToFavorite(id)}
+            variant="default"
+            radius="md"
+            size={30}
+          >
+            <IconStar
+              fill="currentColor"
+              stroke={1.5}
+              className={`${styles.like}}  ${isFavorite === id ? styles.active : styles.like} `}
+            />
           </ActionIcon>
         </Group>
       </Card>
     </>
   );
 };
-
-

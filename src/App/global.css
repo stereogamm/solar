@@ -4,25 +4,25 @@
   box-sizing: border-box;
 }
 
-:root[data-mantine-color-scheme='dark'] {
-  --mantine-color-body: #000000;   
-  --mantine-color-text: #f7f9f6; 
-  --mantine-border: 2px rgba(249, 196, 132, 0.815) solid; 
+:root[data-mantine-color-scheme="dark"] {
+  --mantine-color-body: #000000;
+  --mantine-color-text: #f7f9f6;
+  --mantine-border: 2px rgba(249, 196, 132, 0.815) solid;
   --mantine-text: #dcdbd9;
-  --mantine-accent-text: #fec580;
+  --mantine-header-accent-text: #fec580;
 }
 
 :root {
-  --mantine-font-family: 'Zalando Sans', system-ui, sans-serif;
+  --mantine-font-family: "Zalando Sans", system-ui, sans-serif;
   --spacing-lg: 3rem;
   --spacing-md: 2rem;
   --spacing-sm: 1rem;
-  --spacing-xs: .5rem;
+  --spacing-xs: 0.5rem;
 
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
-  --radius-lg: 16px;  
+  --radius-lg: 16px;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -37,17 +37,17 @@ body {
   font-family: var(--mantine-font-family);
 }
 
-ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-
 @font-face {
-  font-family: 'Zalando Sans';
-  src: url('/dist/fonts/ZalandoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-family: "Zalando Sans";
+  src: url("/dist/fonts/ZalandoSans-VariableFont_wdth,wght.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: normal;
 }
-

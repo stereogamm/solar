@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "../../../Shared/ui/navLink/index";
-import { Group} from "@mantine/core";
+import { Group } from "@mantine/core";
 import { navigationData } from "../../../Shared/configs/navigationData/navigationData";
 
 export const Navbar = () => {
