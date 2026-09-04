@@ -1,38 +1,38 @@
-import { create } from "zustand"
-import { devtools } from "zustand/middleware"
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 // import { getBodies } from "../Shared/api/api-client/api-client"
-import { getBodiesList } from "../Shared/api/api-client/api-client"
-import { type Body }  from "../Pages/bodiesListPage/ui/bodiesList"
+import { getBodiesList } from "../Shared/api/api-client/api-client";
+import { type Body } from "../Pages/bodiesListPage/ui/bodiesList";
 
 type Bodies = Body[];
 
 type BodiesStore = {
-    loading: boolean;
-    bodies: Bodies | null;
-    error: unknown;
-    fetchBodies: () => Promise<void>;
-}
+  loading: boolean;
+  bodies: Bodies | null;
+  error: unknown;
+  fetchBodies: () => Promise<void>;
+};
 
-export const useBodiesStore = create<BodiesStore>()(devtools((set) => ({
-    loading: false,
-    bodies: null,
-    error: null,
+export const useBodiesStore = create<BodiesStore>()(
+  devtools(
+    (set) => ({
+      loading: false,
+      bodies: null,
+      error: null,
 
-    fetchBodies : async () => {
-        set({loading : true, error: null})
+      fetchBodies: async () => {
+        set({ loading: true, error: null });
 
-        try{
-            // const data = await getBodies()
-            const data = await getBodiesList()
-            
-            set({bodies: data, loading : false})
-        } catch(error) {
-            set({ error: error, loading: false})
-        } 
-    }
-}
-  ),  { name: "bodies-store"}
- )
-)
+        try {
+          // const data = await getBodies()
+          const data = await getBodiesList();
 
-
+          set({ bodies: data, loading: false });
+        } catch (error) {
+          set({ error: error, loading: false });
+        }
+      },
+    }),
+    { name: "bodies-store" },
+  ),
+);

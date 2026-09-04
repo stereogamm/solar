@@ -14,6 +14,7 @@ The project is dedicated to exploring the Solar System and collecting the most i
 - CSS
 - React testing library
 - Vitest
+- 3d: React tree fiber
 
 ## Run project
 
