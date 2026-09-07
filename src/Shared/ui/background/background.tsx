@@ -24,9 +24,9 @@ export const Background = () => {
           baseColor: 0xfae0b6,
           backgroundColor: 0x0,
           amplitudeFactor: 0,
-          xOffset: 0.2,
-          yOffset: 0.2,
-          size: 1,
+          xOffset: -0.6,
+          yOffset: 0.1,
+          size: 6.8,
         }),
       );
     }
