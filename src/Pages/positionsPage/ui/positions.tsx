@@ -7,7 +7,7 @@ import customBodies from "../../../Shared/api/mockApiData/customPositionBodies.j
 import { Canvas } from "@react-three/fiber";
 import { Planet } from "./planet";
 import { Soleil } from "./soleil";
-import { OrbitControls, Cloud, Sparkles, Text } from "@react-three/drei";
+import { OrbitControls, Cloud, Sparkles, Text, Billboard } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { type FormData } from "../../../Shared/ui/userForm/ui/userForm";
 import { useRef, useEffect } from "react";
@@ -162,6 +162,19 @@ export const Positions = () => {
           >
             W
           </Text>
+            <Billboard>
+            <Text
+            position={[0, 8, 0]}
+            strokeColor="#7f7e7e"
+            fillOpacity={0}
+            anchorX="center"
+            anchorY="middle"
+            strokeWidth="0.2%"
+            fontSize={1.2}
+          >
+            3D
+          </Text>
+          </Billboard>
           <OrbitControls minDistance={5} maxDistance={15} enablePan={false} />
           <EffectComposer>
             <Bloom
@@ -191,13 +204,13 @@ export const Positions = () => {
             );
           })}
           <Sparkles
-            color="#ffffff"
-            size={1.2}
+            color="#fff7e1"
+            size={2}
             opacity={0.45}
-            count={200}
-            speed={0.01}
-            scale={15}
-            noise={5}
+            count={300}
+            speed={0.02}
+            scale={20}
+            noise={6}
           />
           <Cloud seed={10} scale={2} volume={10} color="#7777b4" fade={200} />
         </Canvas>

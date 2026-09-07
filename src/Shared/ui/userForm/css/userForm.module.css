@@ -1,10 +1,14 @@
 .wrapper {
   display: flex;
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-9));
+  background-color: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-9)
+  );
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   margin: var(--spacing-lg);
-  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-8));
+  border: 1px solid
+    light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-8));
 
   @media (max-width: 48em) {
     flex-direction: column;
@@ -12,24 +16,24 @@
 }
 
 .calendarHeader {
-    padding: 2rem;
-} 
+  padding: 2rem;
+}
 
 .calendarHeaderControl {
-    width: 34px;
-    height: 34px;
-    margin: 1rem;
+  width: 34px;
+  height: 34px;
+  margin: 1rem;
 }
 
 .weekday {
-    color: rgb(247, 172, 31);
-    padding: .5rem;
-    font-weight: 800;
+  color: rgb(247, 172, 31);
+  padding: 0.5rem;
+  font-weight: 800;
 }
 
 .day {
-    margin: .5rem;
-    transition: color 0.3s ease-in;
+  margin: 0.5rem;
+  transition: color 0.3s ease-in;
 }
 
 .day:hover {
@@ -37,37 +41,37 @@
 }
 
 .day[data-selected] {
-    border-bottom: 1px solid rgb(247, 172, 31);
-     color: rgb(247, 172, 31);
+  border-bottom: 1px solid rgb(247, 172, 31);
+  color: rgb(247, 172, 31);
 }
 
 .day[data-today] {
-   color:rgb(247, 172, 31);
-   opacity: 30%;
+  color: rgb(247, 172, 31);
+  opacity: 30%;
 }
 
 .day[data-weekend] {
-    color: rgba(253, 214, 141, 0.835);
+  color: rgba(253, 214, 141, 0.835);
 }
 
 .day[data-outside] {
-    opacity: .35;
+  opacity: 0.35;
 }
 
 .timeWrapper {
-    display: flex;
-    gap: .5rem;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .timeInput :global(.mantine-TimePicker-input) {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .timePickerField {
-    width: 5rem;
+  width: 5rem;
 }
 
 .form {
@@ -87,10 +91,10 @@
 .fieldInput {
   flex: 1;
 
-    @media (max-width: 48em) {
-      margin-left: 0;
-      margin-top: var(--spacing-xs);
-    }
+  @media (max-width: 48em) {
+    margin-left: 0;
+    margin-top: var(--spacing-xs);
+  }
 }
 
 .fieldsGroup {
@@ -112,3 +116,4 @@
     flex: 1;
   }
 }
+

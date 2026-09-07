@@ -128,7 +128,7 @@ export const UserForm = ({
         >
           <Text
             variant="gradient"
-            gradient={{ from: "orange", to: "white", deg: 35 }}
+            gradient={{ from: "#544f4f", to: "#ffffff", deg: 145 }}
             mb="lg"
             fz="h3"
             fw={400}
