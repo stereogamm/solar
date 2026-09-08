@@ -1,0 +1,1 @@
+export { BodiesPhoto } from "./ui/bodiesPhoto"
