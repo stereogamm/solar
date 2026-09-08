@@ -1,6 +1,6 @@
 export const routes = {
     home: () => '/',
-    photos: () => '/photos',
+    stargazing: () => '/twilight',
     positions: () => '/positions',
     list: () => '/list',
     favorite: () => '/favorite',
