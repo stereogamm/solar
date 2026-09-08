@@ -3,8 +3,8 @@ import { IconUniverse, IconPlanet, IconTelescope, IconSatellite, IconStars } fro
 export const navigationData = [
   {
     icon: IconTelescope,
-    label: "stargazer",
-    path: "/twilight"
+    label: "photos",
+    path: "/photos"
   },
     {
     icon: IconUniverse,
