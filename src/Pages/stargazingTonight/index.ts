@@ -1,1 +1,1 @@
-export { BodiesPhoto } from "./ui/stargazing"
+export { StargazingTonight } from "./ui/stargazing"
