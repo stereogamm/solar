@@ -1,0 +1,196 @@
+{
+  "endpoint": "/v2/dark-window",
+  "computed_at": "2026-08-01T00:00:00.000Z",
+  "query": {
+    "at": "2026-11-14T00:00:00.000Z",
+    "mode": "instant",
+    "resolved_from": "at",
+    "is_now": false,
+    "latitude": 51.509,
+    "longitude": -0.126,
+    "elevation_m": 0,
+    "tz": "Europe/London",
+    "utc_offset_seconds": 0,
+    "utc_offset_iso": "+00:00",
+    "is_dst": false,
+    "timezone_source": "parameter",
+    "time_format": "iso",
+    "format": "json",
+    "shape": "nested",
+    "precision": 6,
+    "pretty": 1,
+    "verbosity": "full",
+    "nights": 3,
+    "sun_depression_deg": 18,
+    "moon_altitude_max_deg": 0,
+    "moon_illumination_max": 1,
+    "ignored": []
+  },
+  "data": {
+    "method": {
+      "sun_test": "Sun's geometric centre at or below -18 deg",
+      "moon_test": "Moon below the horizon by the engine's own rise and set search, which applies topocentric parallax and refraction to the upper limb",
+      "illumination_override_offered": false,
+      "illumination_override_applied": false,
+      "boundary_precision_seconds": 1,
+      "note": "Boundaries are root-found, not sampled, through the same rise and set search /v2/rise-set uses, so a moonset here and a moonset there agree to within the root finder's own tolerance of a few milliseconds."
+    },
+    "high_latitude_caution": false,
+    "high_latitude_note": null,
+    "best_night_index": 0,
+    "ranked": [
+      0,
+      1,
+      2
+    ],
+    "nights": [
+      {
+        "night_of": "2026-11-14",
+        "label": "Night of Saturday 14 November 2026",
+        "dark_interval": {
+          "kind": "astronomical_night",
+          "label": "Astronomical night",
+          "start": "2026-11-14T18:09:13.058+00:00",
+          "end": "2026-11-15T05:21:23.662+00:00",
+          "duration_minutes": 672.2,
+          "start_reason": "sun_reached_depression",
+          "end_reason": "sun_left_depression",
+          "open_start": false,
+          "open_end": false
+        },
+        "special": null,
+        "usable_intervals": [
+          {
+            "kind": "moonless_dark",
+            "label": "Moonless dark",
+            "start": "2026-11-14T19:50:10.104+00:00",
+            "end": "2026-11-15T05:21:23.662+00:00",
+            "duration_minutes": 571.2,
+            "start_reason": "moon_set",
+            "end_reason": "sun_left_depression",
+            "open_start": false,
+            "open_end": false
+          }
+        ],
+        "usable_minutes": 571.2,
+        "moonlit_dark_minutes": 101,
+        "usable_fraction": 0.8497,
+        "moon": {
+          "illuminated_fraction_at_midpoint": 0.271392,
+          "phase_name": "waxing_crescent",
+          "rise": "2026-11-14T12:16:26.512+00:00",
+          "set": "2026-11-14T19:50:10.104+00:00",
+          "up_at_dusk": true,
+          "up_for_whole_dark_interval": false
+        },
+        "illumination_override_applied": false,
+        "verdict": "good",
+        "verdict_reason": "Between 60 and 85 percent of astronomical night is moonless."
+      },
+      {
+        "night_of": "2026-11-15",
+        "label": "Night of Sunday 15 November 2026",
+        "dark_interval": {
+          "kind": "astronomical_night",
+          "label": "Astronomical night",
+          "start": "2026-11-15T18:08:07.923+00:00",
+          "end": "2026-11-16T05:22:48.657+00:00",
+          "duration_minutes": 674.7,
+          "start_reason": "sun_reached_depression",
+          "end_reason": "sun_left_depression",
+          "open_start": false,
+          "open_end": false
+        },
+        "special": null,
+        "usable_intervals": [
+          {
+            "kind": "moonless_dark",
+            "label": "Moonless dark",
+            "start": "2026-11-15T21:02:13.762+00:00",
+            "end": "2026-11-16T05:22:48.657+00:00",
+            "duration_minutes": 500.6,
+            "start_reason": "moon_set",
+            "end_reason": "sun_left_depression",
+            "open_start": false,
+            "open_end": false
+          }
+        ],
+        "usable_minutes": 500.6,
+        "moonlit_dark_minutes": 174.1,
+        "usable_fraction": 0.742,
+        "moon": {
+          "illuminated_fraction_at_midpoint": 0.35895,
+          "phase_name": "waxing_crescent",
+          "rise": "2026-11-15T12:40:39.487+00:00",
+          "set": "2026-11-15T21:02:13.762+00:00",
+          "up_at_dusk": true,
+          "up_for_whole_dark_interval": false
+        },
+        "illumination_override_applied": false,
+        "verdict": "good",
+        "verdict_reason": "Between 60 and 85 percent of astronomical night is moonless."
+      },
+      {
+        "night_of": "2026-11-16",
+        "label": "Night of Monday 16 November 2026",
+        "dark_interval": {
+          "kind": "astronomical_night",
+          "label": "Astronomical night",
+          "start": "2026-11-16T18:07:05.191+00:00",
+          "end": "2026-11-17T05:24:12.871+00:00",
+          "duration_minutes": 677.1,
+          "start_reason": "sun_reached_depression",
+          "end_reason": "sun_left_depression",
+          "open_start": false,
+          "open_end": false
+        },
+        "special": null,
+        "usable_intervals": [
+          {
+            "kind": "moonless_dark",
+            "label": "Moonless dark",
+            "start": "2026-11-16T22:15:31.163+00:00",
+            "end": "2026-11-17T05:24:12.871+00:00",
+            "duration_minutes": 428.7,
+            "start_reason": "moon_set",
+            "end_reason": "sun_left_depression",
+            "open_start": false,
+            "open_end": false
+          }
+        ],
+        "usable_minutes": 428.7,
+        "moonlit_dark_minutes": 248.4,
+        "usable_fraction": 0.6331,
+        "moon": {
+          "illuminated_fraction_at_midpoint": 0.452732,
+          "phase_name": "first_quarter",
+          "rise": "2026-11-16T12:59:01.516+00:00",
+          "set": "2026-11-16T22:15:31.163+00:00",
+          "up_at_dusk": true,
+          "up_for_whole_dark_interval": false
+        },
+        "illumination_override_applied": false,
+        "verdict": "good",
+        "verdict_reason": "Between 60 and 85 percent of astronomical night is moonless."
+      }
+    ],
+    "summary": {
+      "nights_returned": 3,
+      "best_night_of": "2026-11-14",
+      "best_usable_minutes": 571.2,
+      "total_usable_minutes": 1500.5,
+      "trend": "declining",
+      "trend_note": "The moonless window shortens by about 71.3 minutes on each successive night across this run."
+    }
+  },
+  "warnings": [],
+  "links": {
+    "self": "https://www.cyclecalcs.com/v2/dark-window?at=2026-11-14&lat=51.509&lon=-0.126&nights=3&tz=Europe%2FLondon",
+    "docs": "https://www.cyclecalcs.com/api/reference.html#dark-window",
+    "spec": "https://www.cyclecalcs.com/v2/openapi.json",
+    "page": "https://www.cyclecalcs.com/sunrise-sunset-calculator.html#dw-section"
+  },
+  "meta": "... see 'Shared parameters and conventions' above: engine credit, cache class, accuracy statement, time and rights blocks ...",
+  "attribution": "Computed by CycleCalcs (cyclecalcs.com) with the MIT-licensed Astronomy Engine. Positional astronomy only.",
+  "docs": "https://www.cyclecalcs.com/api/reference.html#dark-window"
+}
