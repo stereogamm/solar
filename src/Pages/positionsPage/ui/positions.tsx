@@ -1,5 +1,5 @@
 import styles from "../css/positions.module.css";
-import { UserForm } from "../../../Shared/ui/userForm/ui/userForm";
+import { UserForm } from "../../../Widgets/userForm/ui/userForm";
 import { LoaderCustom } from "../../../Shared/ui/loader/ui/loader";
 import { useSearchParams } from "react-router";
 import { useCustomPositionBodiesStore } from "../../../stores/useCustomPositionBodies";
@@ -9,7 +9,7 @@ import { Planet } from "./planet";
 import { Soleil } from "./soleil";
 import { OrbitControls, Cloud, Sparkles, Text, Billboard } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { type FormData } from "../../../Shared/ui/userForm/ui/userForm";
+import { type FormData } from "../../../Widgets/userForm/ui/userForm";
 import { useRef, useEffect } from "react";
 
 export type Position = {
